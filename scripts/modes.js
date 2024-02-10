@@ -75,6 +75,10 @@ dialog.addEventListener('click', (event) => {
     }
 });
 
-if (prefersDarkMode() && hasDialogBeenShown()) {
+if (prefersDarkMode()) {
     body.classList.add('dark'); // Apply dark mode styles
+}
+
+if (!hasDialogBeenShown() && !prefersDarkMode()) {
+    showDialog();
 }
