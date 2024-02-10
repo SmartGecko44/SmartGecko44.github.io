@@ -2,6 +2,7 @@
 const darkModeToggle = document.getElementById('dark-toggle');
 const body = document.body;
 const dialog = document.getElementById('darkModeDia'); // Get reference to the dialog box
+const dialogueDarkMode = document.getElementById('darkModeDia');
 
 // Function to set a cookie
 function setCookie(name, value, days) {
@@ -53,6 +54,7 @@ function handleDialogResponse(response) {
     if (response === 'yes') {
         body.classList.toggle('dark'); // Apply dark mode styles
         darkModeToggle.classList.toggle('dark'); // Apply dark mode styles
+        dialogueDarkMode.classList.toggle('dark'); // Apply dark mode styles
         // Store the dark mode setting in a cookie
         setCookie('darkMode', body.classList.contains('dark'), 30);
     }
@@ -79,6 +81,7 @@ dialog.addEventListener('click', (event) => {
 if (prefersDarkMode()) {
     body.classList.add('dark'); // Apply dark mode styles
     darkModeToggle.classList.add('dark'); // Apply dark mode styles
+    dialogueDarkMode.classList.add('dark'); // Apply dark mode styles
 }
 
 if (!hasDialogBeenShown() && !prefersDarkMode()) {

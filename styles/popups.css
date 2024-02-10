@@ -5,7 +5,7 @@
     left: 0;
     padding: 20px;
     border: 2px solid #333333;
-    border-radius: 10px;
+    border-radius: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     z-index: 1000;
     font-family: "Comic Sans MS", serif;
@@ -18,17 +18,28 @@
 
 /* Styles for the content inside the dialog box */
 #darkModeDia p {
-    margin-bottom: 10px;
+    font-size: 30px;
+    margin-bottom: 15px;
+    margin-top: 5px;
+}
+
+#darkModeDia.dark {
+    font-family: "Aptos", serif;
+}
+
+#darkModeDia .button-container {
+    display: flex;
+    justify-content: space-between;
 }
 
 /* Styles for the buttons inside the dialog box */
 #darkModeDia button {
+    font-size: 20px;
     padding: 10px 20px;
     margin-right: 10px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-family: "Comic Sans MS", serif;
 }
 
 #darkModeDia #confirm {
@@ -51,4 +62,15 @@
 
 #dark-toggle.dark {
     background-color: dimgray;
+}
+
+/* Media query for small screen widths */
+@media (max-width: 300px) {
+    #darkModeDia .button-container {
+        flex-direction: column;
+    }
+
+    #darkModeDia button {
+        margin-bottom: 10px;
+    }
 }
