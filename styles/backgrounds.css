@@ -2,6 +2,7 @@ body {
     background-color: #ffffff;
     color: #000000;
     font-family: "Comic Sans MS", serif;
+    transition: all 1s ease-in-out;
 }
 
 body.dark {

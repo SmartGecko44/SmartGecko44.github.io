@@ -10,6 +10,7 @@
     z-index: 1000;
     font-family: "Comic Sans MS", serif;
     background: linear-gradient(to bottom right, #FF6D6A, #EFBE7D, #E9EC6B, #8BD3E6, #E9CDD0, #B1A2CA);
+    transition: all 1s ease-in-out;
 }
 
 #darkModeDia::backdrop {
@@ -63,10 +64,13 @@
     width: 100px;
     border-radius: 25%;
     cursor: pointer;
+    transition: all 1s ease-in-out;
+    transform: rotate(180deg);
 }
 
 #dark-toggle.dark {
     background-color: dimgray;
+    transform: rotate(0deg);
 }
 
 /* Media query for small screen widths */

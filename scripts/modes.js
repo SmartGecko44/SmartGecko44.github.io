@@ -1,7 +1,6 @@
 // JavaScript for dark mode toggle
 const darkModeToggle = document.getElementById('dark-toggle');
 const body = document.body;
-const dialog = document.getElementById('darkModeDia'); // Get reference to the dialog box
 const dialogueDarkMode = document.getElementById('darkModeDia');
 
 // Function to set a cookie
@@ -40,13 +39,13 @@ function prefersDarkMode() {
 
 // Function to show the dialog box
 function showDialog() {
-    dialog.showModal(); // Show the dialog box
+    dialogueDarkMode.showModal(); // Show the dialog box
     setCookie('dialogShown', true, 30);
 }
 
 // Function to close the dialog box
 function closeDialog() {
-    dialog.close(); // Close the dialog box
+    dialogueDarkMode.close(); // Close the dialog box
 }
 
 // Function to handle the user's response to the dialog box
@@ -70,7 +69,7 @@ function hasDialogBeenShown() {
 darkModeToggle.addEventListener('click', () => showDialog())
 
 // Event listener for the dialog buttons
-dialog.addEventListener('click', (event) => {
+dialogueDarkMode.addEventListener('click', (event) => {
     if (event.target.id === 'confirm') {
         handleDialogResponse('yes'); // User clicked "Yes"
     } else if (event.target.id === 'cancel') {
