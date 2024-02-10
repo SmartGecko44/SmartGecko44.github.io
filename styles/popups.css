@@ -1,0 +1,42 @@
+/* Styles for the dialog box */
+#dialog {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 2px solid #333333;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    font-family: "Comic Sans MS", serif;
+}
+
+/* Styles for the content inside the dialog box */
+#dialog p {
+    margin-bottom: 10px;
+}
+
+/* Styles for the buttons inside the dialog box */
+#dialog button {
+    padding: 10px 20px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: "Comic Sans MS", serif;
+}
+
+#dialog #confirm {
+    background-color: #4CAF50; /* Green */
+    color: white;
+}
+
+#dialog #cancel {
+    background-color: #f44336; /* Red */
+    color: white;
+}
+
+#dark-toggle {
+    font-family: "Comic Sans MS", serif;
+}

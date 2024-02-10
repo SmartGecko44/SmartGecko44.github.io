@@ -1,0 +1,11 @@
+body {
+    background-color: #ffffff;
+    color: #000000;
+    font-family: "Comic Sans MS", serif;
+}
+
+body.dark {
+    background-color: #222222;
+    color: #ffffff;
+    font-family: "Arial Black", serif;
+}
