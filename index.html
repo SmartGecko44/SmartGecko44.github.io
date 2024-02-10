@@ -2,20 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>My GitHub Pages Demo</title>
-    <link rel="stylesheet" href="styles/backgrounds.css"> <!-- Link to external CSS file -->
-    <link rel="stylesheet" href="styles/popups.css"> <!-- Link to external CSS file -->
+    <link href="styles/backgrounds.css" rel="stylesheet"> <!-- Link to external CSS file -->
+    <link href="styles/popups.css" rel="stylesheet"> <!-- Link to external CSS file -->
 </head>
 <body>
-<dialog id="dialog"> <!-- Dialog box for dark mode -->
-    <p>Would you like to toggle the Dark mode?</p>
-    <button id="confirm">Yes</button>
-    <button id="cancel">No</button>
-</dialog>
-<h1>Hai! Welcome to my about me page! (WIP)</h1>
+<div id="darkModeMenu">
+    <dialog id="darkModeDia">
+        <p>Would you like to toggle the Dark mode?</p>
+        <button id="confirm">Yes</button>
+        <button id="cancel">No</button>
+    </dialog>
+</div>
+<h1 id="title">Hai! Welcome to my about me page! (WIP)</h1>
 <p></p>
-<button id="dark-toggle">Toggle Dark Mode</button> <!-- Button to toggle dark mode -->
+<img id="dark-toggle" src="icons/contrast.svg" alt="Dark Mode Icon">
 <script src="scripts/modes.js"></script> <!-- Link to external JavaScript file -->
 </body>
 </html>

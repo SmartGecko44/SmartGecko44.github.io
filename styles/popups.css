@@ -1,24 +1,28 @@
 /* Styles for the dialog box */
-#dialog {
+#darkModeDia {
     position: absolute;
-    top: 0%;
-    left: 0%;
+    top: 0;
+    left: 0;
     padding: 20px;
-    background-color: #ffffff;
     border: 2px solid #333333;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     z-index: 1000;
     font-family: "Comic Sans MS", serif;
+    background: linear-gradient(to bottom right, #FF6D6A, #EFBE7D, #E9EC6B, #8BD3E6, #E9CDD0, #B1A2CA);
+}
+
+#darkModeDia::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 /* Styles for the content inside the dialog box */
-#dialog p {
+#darkModeDia p {
     margin-bottom: 10px;
 }
 
 /* Styles for the buttons inside the dialog box */
-#dialog button {
+#darkModeDia button {
     padding: 10px 20px;
     margin-right: 10px;
     border: none;
@@ -27,16 +31,24 @@
     font-family: "Comic Sans MS", serif;
 }
 
-#dialog #confirm {
+#darkModeDia #confirm {
     background-color: #4CAF50; /* Green */
     color: white;
 }
 
-#dialog #cancel {
+#darkModeDia #cancel {
     background-color: #f44336; /* Red */
     color: white;
 }
 
 #dark-toggle {
-    font-family: "Comic Sans MS", serif;
+    position: absolute;
+    bottom: 1%;
+    width: 100px;
+    border-radius: 25%;
+    cursor: pointer;
+}
+
+#dark-toggle.dark {
+    background-color: dimgray;
 }

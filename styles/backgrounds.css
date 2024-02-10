@@ -9,3 +9,11 @@ body.dark {
     color: #ffffff;
     font-family: "Arial Black", serif;
 }
+
+#title {
+    background: linear-gradient(to bottom right, #FF6D6A, #EFBE7D, #E9EC6B, #8BD3E6, #E9CDD0, #B1A2CA);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: xxx-large;
+    margin: 0;
+}
