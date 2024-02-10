@@ -68,9 +68,20 @@
     transform: rotate(180deg);
 }
 
+/* TODO: Add radial falloff around the edges */
+
+#dark-toggle:hover {
+    background-color: #afafaf;
+    transition: all 0.5s ease-out;
+}
+
 #dark-toggle.dark {
     background-color: dimgray;
     transform: rotate(0deg);
+}
+
+#dark-toggle.dark:hover {
+    background-color: darkgray;
 }
 
 /* Media query for small screen widths */
