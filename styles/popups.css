@@ -1,4 +1,13 @@
 /* Styles for the dialog box */
+
+/* FIXME: Fix background animation */
+/*
+@keyframes gradient-animation {
+    0% { background-position: 0 0; }
+    50% { background-position: 100% 100%; }
+    100% { background-position: 0 0; }
+} */
+
 #darkModeDia {
     position: absolute;
     top: 0;
@@ -15,7 +24,7 @@
 }
 
 #darkModeDia::backdrop {
-    opacity: 0;
+    display: none;
     background-color: rgba(0, 0, 0, 0);
 }
 
@@ -30,9 +39,6 @@
     font-size: 30px;
     margin-bottom: 15px;
     margin-top: 5px;
-}
-
-#darkModeDia.dark {
 }
 
 #darkModeDia .button-container {
