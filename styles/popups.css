@@ -8,13 +8,21 @@
     border-radius: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     z-index: 1000;
-    font-family: "Comic Sans MS", serif;
+    font-family: "Aptos", serif;
     background: linear-gradient(to bottom right, #FF6D6A, #EFBE7D, #E9EC6B, #8BD3E6, #E9CDD0, #B1A2CA);
+    opacity: 0;
     transition: all 1s ease-in-out;
 }
 
 #darkModeDia::backdrop {
-    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+#darkModeDia.visible {
+    opacity: 1;
+    box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.5);
+    transition: opacity 1s linear;
 }
 
 /* Styles for the content inside the dialog box */
@@ -25,7 +33,6 @@
 }
 
 #darkModeDia.dark {
-    font-family: "Aptos", serif;
 }
 
 #darkModeDia .button-container {
@@ -40,11 +47,6 @@
     margin-right: 10px;
     border: none;
     border-radius: 5px;
-    cursor: pointer;
-    font-family: "Comic Sans MS", serif;
-}
-
-#darkModeDia.dark button {
     font-family: "Aptos", serif;
 }
 
@@ -72,6 +74,7 @@
 
 #dark-toggle:hover {
     background-color: #afafaf;
+    transform: rotate(170deg);
     transition: all 0.5s ease-out;
 }
 
@@ -82,6 +85,8 @@
 
 #dark-toggle.dark:hover {
     background-color: darkgray;
+    transform: rotate(10deg);
+    transition: all 0.5s ease-out;
 }
 
 /* Media query for small screen widths */

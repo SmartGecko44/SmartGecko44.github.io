@@ -1,14 +1,17 @@
 body {
     background-color: #ffffff;
     color: #000000;
-    font-family: "Comic Sans MS", serif;
-    transition: all 1s ease-in-out;
+    font-family: "Aptos", serif;
 }
 
 body.dark {
     background-color: #222222;
     color: #ffffff;
-    font-family: "Aptos", serif;
+}
+
+body.inBackground {
+    filter: blur(5px);
+    transition: all 1s ease-in-out;
 }
 
 #title {

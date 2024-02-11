@@ -3,6 +3,38 @@ const darkModeToggle = document.getElementById('dark-toggle');
 const body = document.body;
 const dialogueDarkMode = document.getElementById('darkModeDia');
 
+if (prefersDarkMode()) {
+    body.classList.add('dark'); // Apply dark mode styles
+    darkModeToggle.classList.add('dark'); // Apply dark mode styles
+    dialogueDarkMode.classList.add('dark'); // Apply dark mode styles
+}
+
+if (!hasDialogBeenShown() && !prefersDarkMode()) {
+    showDialog();
+}
+
+darkModeToggle.addEventListener('click', () => showDialog())
+
+// Event listener for the dialog buttons
+dialogueDarkMode.addEventListener('click', (event) => {
+    if (event.target.id === 'confirm') {
+        handleDialogResponse('yes'); // User clicked "Yes"
+    } else if (event.target.id === 'cancel') {
+        closeDialog(); // User clicked "No"
+    }
+});
+
+// Function to check if dark mode is preferred by the user
+function prefersDarkMode() {
+    // Check if dark mode setting is stored in a cookie
+    if (getCookie('darkMode') !== null) {
+        return getCookie('darkMode') === 'true';
+    } else {
+        // If not, check the user's system preference
+        return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    }
+}
+
 // Function to set a cookie
 function setCookie(name, value, days) {
     let expires = "";
@@ -26,26 +58,19 @@ function getCookie(name) {
     return null;
 }
 
-// Function to check if dark mode is preferred by the user
-function prefersDarkMode() {
-    // Check if dark mode setting is stored in a cookie
-    if (getCookie('darkMode') !== null) {
-        return getCookie('darkMode') === 'true';
-    } else {
-        // If not, check the user's system preference
-        return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-    }
+// Function to check if the dialog has been shown before
+function hasDialogBeenShown() {
+    return !!getCookie('dialogShown');
 }
 
 // Function to show the dialog box
 function showDialog() {
     dialogueDarkMode.showModal(); // Show the dialog box
+    setTimeout(() => {
+        dialogueDarkMode.classList.add('visible');
+    }, 50);
+    body.classList.add('inBackground');
     setCookie('dialogShown', true, 30);
-}
-
-// Function to close the dialog box
-function closeDialog() {
-    dialogueDarkMode.close(); // Close the dialog box
 }
 
 // Function to handle the user's response to the dialog box
@@ -61,28 +86,11 @@ function handleDialogResponse(response) {
     closeDialog();
 }
 
-// Function to check if the dialog has been shown before
-function hasDialogBeenShown() {
-    return !!getCookie('dialogShown');
-}
-
-darkModeToggle.addEventListener('click', () => showDialog())
-
-// Event listener for the dialog buttons
-dialogueDarkMode.addEventListener('click', (event) => {
-    if (event.target.id === 'confirm') {
-        handleDialogResponse('yes'); // User clicked "Yes"
-    } else if (event.target.id === 'cancel') {
-        closeDialog(); // User clicked "No"
-    }
-});
-
-if (prefersDarkMode()) {
-    body.classList.add('dark'); // Apply dark mode styles
-    darkModeToggle.classList.add('dark'); // Apply dark mode styles
-    dialogueDarkMode.classList.add('dark'); // Apply dark mode styles
-}
-
-if (!hasDialogBeenShown() && !prefersDarkMode()) {
-    showDialog();
+// Function to close the dialog box
+function closeDialog() {
+    dialogueDarkMode.classList.remove('visible');
+    setTimeout(() => {
+        dialogueDarkMode.close();
+        body.classList.remove('inBackground')// Close the dialog box
+    }, 1000); // Delay equal to the transition duration
 }
