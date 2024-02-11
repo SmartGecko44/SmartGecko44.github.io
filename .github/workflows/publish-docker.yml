@@ -19,4 +19,4 @@ jobs:
       - name: Build and push Docker image
         run: |
           docker build -t ghcr.io/${{ github.repository_owner }}/$(echo "${{ github.repository }}" | awk -F '/' '{print tolower($2)}'):latest .
-          docker push ghcr.io/${{ github.repository_owner }}/$(echo "${{ github.repository }}" | awk -F '/' '{print tolower($2)}'):latest
+          docker push ghcr.io/$(echo "${{ github.repository_owner }}" | awk -F '/' '{print tolower($2)}')/$(echo "${{ github.repository }}" | awk -F '/' '{print tolower($2)}'):latest
