@@ -24,3 +24,5 @@ S
 -.idea/sonarlint/securityhotspotstore/index.pb,8/8/88a9255124c95bdc913197c120a8d560edc59c8e
 B
 icons/contrast.svg,d/8/d84b016ddaef863003add4343797e8d95ea128c6
+T
+$.github/workflows/publish-docker.yml,a/4/a4f1d2a47291643bbc3040ef74ed6b3caa228e18
