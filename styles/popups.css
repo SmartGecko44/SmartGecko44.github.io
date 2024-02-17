@@ -44,6 +44,7 @@
 #darkModeDia .button-container {
     display: flex;
     justify-content: space-between;
+    transition: flex-direction 0.75s ease-out; /* Add transition */
 }
 
 /* Styles for the buttons inside the dialog box */
@@ -55,6 +56,7 @@
     border-radius: 5px;
     font-family: "Aptos", serif;
     cursor: pointer;
+    transition: margin-bottom 0.75s ease-out; /* Add transition */
 }
 
 #darkModeDia #confirm {
@@ -100,10 +102,12 @@
 @media (max-width: 300px) {
     #darkModeDia .button-container {
         flex-direction: column;
+        transition: flex-direction 0.75s ease-out; /* Add transition */
     }
 
     #darkModeDia button {
         margin-bottom: 10px;
+        transition: margin-bottom 0.75s ease-out; /* Add transition */
     }
 }
 
@@ -116,8 +120,8 @@
     padding: 20px;
     background-color: #f5f5f5;
     border: 1px solid #ddd;
-    border-radius: 5px;
-    z-index: 1000;
+    border-radius: 15px;
+    z-index: 1001;
     transition: all 0.5s ease-in-out; /* Add transition */
 }
 
@@ -134,15 +138,33 @@
     display: flex;
     justify-content: space-between;
     margin-top: 10px;
+    transition: flex-direction 0.75s ease-out; /* Add transition */
 }
 
 #cookiePopup button {
+    -webkit-appearance: none;
+    outline: none;
+    border-radius: 5px;
     padding: 5px 10px;
     cursor: pointer;
-    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out; /* Add transition */
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border-radius 0.3s ease-in-out, margin-bottom 0.75s ease-out; /* Add transition */
 }
 
 #cookiePopup button:hover {
+    border-radius: 10px;
     background-color: #ddd;
     color: #333;
+    transition: border-radius 0.3s ease-in-out; /* Add transition */
+}
+
+@media (max-width: 331px) {
+    #cookiePopup .button-container {
+        flex-direction: column;
+        transition: flex-direction 0.75s ease-out; /* Add transition */
+    }
+
+    #cookiePopup button {
+        margin-bottom: 10px;
+        transition: margin-bottom 0.75s ease-out; /* Add transition */
+    }
 }
