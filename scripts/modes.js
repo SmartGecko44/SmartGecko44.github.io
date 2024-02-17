@@ -2,11 +2,13 @@
 const darkModeToggle = document.getElementById('dark-toggle');
 const body = document.body;
 const dialogueDarkMode = document.getElementById('darkModeDia');
+const cookiePopup = document.getElementById('cookiePopup');
 
 if (prefersDarkMode()) {
     body.classList.add('dark'); // Apply dark mode styles
     darkModeToggle.classList.add('dark'); // Apply dark mode styles
     dialogueDarkMode.classList.add('dark'); // Apply dark mode styles
+    cookiePopup.classList.add('dark'); // Apply dark mode styles
 }
 
 if (!hasDialogBeenShown() && !prefersDarkMode()) {
@@ -70,7 +72,11 @@ function showDialog() {
         dialogueDarkMode.classList.add('visible');
     }, 50);
     body.classList.add('inBackground');
-    setCookie('dialogShown', true, 30);
+    if (checkCookiesAccepted()) {
+        setCookie('dialogShown', true, 30);
+    } else {
+        console.log('Cookies are not enabled');
+    }
 }
 
 // Function to handle the user's response to the dialog box
@@ -79,8 +85,13 @@ function handleDialogResponse(response) {
         body.classList.toggle('dark'); // Apply dark mode styles
         darkModeToggle.classList.toggle('dark'); // Apply dark mode styles
         dialogueDarkMode.classList.toggle('dark'); // Apply dark mode styles
-        // Store the dark mode setting in a cookie
-        setCookie('darkMode', body.classList.contains('dark'), 30);
+        cookiePopup.classList.toggle('dark'); // Apply dark mode styles
+        // Store the dark mode setting in a cookie if the user has cookies enabled
+        if (checkCookiesAccepted()) {
+            setCookie('darkMode', body.classList.contains('dark'), 30);
+        } else {
+            console.log('Cookies are not enabled');
+        }
     }
     // Close the dialog box
     closeDialog();
@@ -93,4 +104,29 @@ function closeDialog() {
         dialogueDarkMode.close();
         body.classList.remove('inBackground')// Close the dialog box
     }, 1000); // Delay equal to the transition duration
+}
+
+document.getElementById('accept').addEventListener('click', function() {
+    document.cookie = "cookiesAccepted=true; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/";
+    document.getElementById('cookiePopup').classList.remove('show'); /* Hide the popup */
+});
+
+document.getElementById('decline').addEventListener('click', function() {
+    document.getElementById('cookiePopup').classList.remove('show'); /* Hide the popup */
+});
+
+window.onload = function() {
+    if (getCookie('cookiesAccepted')) {
+        document.getElementById('cookiePopup').classList.remove('show');
+    } else {
+        document.getElementById('cookiePopup').classList.add('show'); /* Show the popup */
+    }
+};
+
+function checkCookiesAccepted() {
+    return getCookie('cookiesAccepted') === 'true';
+}
+
+function test() {
+    document.getElementById('cookiePopup').classList.add('show');
 }
