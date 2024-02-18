@@ -1,3 +1,0 @@
----
-permalink: /redirects/genshin-util/
----
