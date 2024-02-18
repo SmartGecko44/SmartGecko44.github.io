@@ -31,3 +31,5 @@ $.github/workflows/publish-docker.yml,a/4/a4f1d2a47291643bbc3040ef74ed6b3caa228
 Dockerfile,6/6/6651ddff6eb82c840ced7c1dddee15c6e1913dd4
 5
 CNAME,b/9/b9c1aaaf65573c7e15b93b6d826729e7711cf242
+K
+redirects/genshin-util.html,3/6/36d6fa5a15881b3f895c21da09aa2af73ed62d20
