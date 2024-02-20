@@ -16,8 +16,8 @@ RUN addgroup -S nonroot \
 COPY --from=builder /usr/share/nginx/html /usr/share/nginx/html
 
 # Ensure nonroot user has necessary permissions
-RUN chown -R nonroot:nonroot /var/cache/nginx /var/run /var/log/nginx /var/run/nginx.pid /usr/share/nginx/html
-RUN chmod -R 755 /var/cache/nginx /var/run /var/log/nginx /var/run/nginx.pid /usr/share/nginx/html
+RUN chown -R nonroot:nonroot /var/cache/nginx /var/run /var/log/nginx /usr/share/nginx/html
+RUN chmod -R 755 /var/cache/nginx /var/run /var/log/nginx /usr/share/nginx/html
 
 # Expose port 80 for the web server
 EXPOSE 80
