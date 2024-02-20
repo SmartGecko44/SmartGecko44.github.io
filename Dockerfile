@@ -12,6 +12,9 @@ FROM nginx:alpine AS runtime
 RUN addgroup -S nonroot \
     && adduser -S nonroot -G nonroot
 
+# Create nginx.pid file before changing ownership
+RUN touch /var/run/nginx.pid
+
 # Ensure nonroot user has necessary permissions
 RUN chown -R nonroot:nonroot /var/cache/nginx /var/run /var/log/nginx /var/run/nginx.pid
 RUN chmod -R 755 /var/cache/nginx /var/run /var/log/nginx /var/run/nginx.pid
