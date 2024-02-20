@@ -12,8 +12,9 @@ FROM nginx:alpine AS runtime
 RUN addgroup -S nonroot \
     && adduser -S nonroot -G nonroot
 
-RUN chown -R nonroot:nonroot /var/cache/nginx /var/run /var/log/nginx && \
-    chmod -R 755 /var/cache/nginx /var/run /var/log/nginx
+# Ensure nonroot user has necessary permissions
+RUN chown -R nonroot:nonroot /var/cache/nginx /var/run /var/log/nginx /var/run/nginx.pid
+RUN chmod -R 755 /var/cache/nginx /var/run /var/log/nginx /var/run/nginx.pid
 
 # Expose port 80 for the web server
 EXPOSE 80
