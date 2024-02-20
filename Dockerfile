@@ -15,9 +15,11 @@ RUN addgroup -S nonroot \
 # Copy static website files from the builder stage
 COPY --from=builder /usr/share/nginx/html /usr/share/nginx/html
 
+RUN touch /var/run/nginx.pid
+
 # Ensure nonroot user has necessary permissions
-RUN chown -R nonroot:nonroot /var/cache/nginx /var/run /var/log/nginx /usr/share/nginx/html
-RUN chmod -R 755 /var/cache/nginx /var/run /var/log/nginx /usr/share/nginx/html
+RUN chown -R nonroot:nonroot /var/cache/nginx /var/run /var/log/nginx /var/run/nginx.pid /usr/share/nginx/html
+RUN chmod -R 755 /var/cache/nginx /var/run /var/log/nginx /var/run/nginx.pid /usr/share/nginx/html
 
 # Expose port 80 for the web server
 EXPOSE 80
