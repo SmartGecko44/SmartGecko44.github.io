@@ -12,10 +12,10 @@ FROM nginx:alpine AS runtime
 RUN addgroup -S nonroot \
     && adduser -S nonroot -G nonroot
 
-USER nonroot
-
 # Expose port 80 for the web server
 EXPOSE 80
 
 # Start Nginx when the container has provisioned
 CMD ["nginx", "-g", "daemon off;"]
+
+USER nonroot
