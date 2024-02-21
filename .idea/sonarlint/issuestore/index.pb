@@ -6,8 +6,6 @@ A
 styles/popups.css,e/3/e3a9c3bcf3131e86b8257a60378be6dc7b6fa2fb
 F
 styles/backgrounds.css,1/4/14dc454ef15370532080c4478ced95a4c7fa223f
-K
-redirects/genshin-util.html,3/6/36d6fa5a15881b3f895c21da09aa2af73ed62d20
 @
 scripts/modes.js,0/9/0990b82fef81f6e0d9f31a1e70346676b531ecfa
 T
@@ -21,3 +19,8 @@ B
 :
 
 Dockerfile,6/6/6651ddff6eb82c840ced7c1dddee15c6e1913dd4
+J
+redirect/genshin-util.html,6/0/6046d7b888d42562097b83f42ea07b3a13b3c2d4
+:
+
+LICENSE.md,4/a/4a8486805915245bbbe2e3c8c1a9d680c6843a82
