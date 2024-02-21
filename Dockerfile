@@ -4,6 +4,7 @@ LABEL authors="gecko"
 
 # Copy the static website files into the Nginx container
 COPY ./index.html /usr/share/nginx/html
+COPY ./favicon.ico /usr/share/nginx/html
 COPY ./styles /usr/share/nginx/html/styles
 COPY ./scripts /usr/share/nginx/html/scripts
 COPY ./icons /usr/share/nginx/html/icons
