@@ -2,5 +2,12 @@
   "dependencies": {
     "@sentry/browser": "^7.102.1",
     "react": "^18.2.0"
-  }
+  },
+  "devDependencies": {
+    "webpack": "^5.90.3",
+    "webpack-cli": "^5.1.4"
+  },
+    "scripts": {
+        "build": "webpack"
+    }
 }
