@@ -1,20 +1,27 @@
-# Use the Nginx image from Docker Hub
-FROM nginx:alpine AS builder
+# Use the Node.js image as builder stage
+FROM node:20 AS builder
 LABEL authors="gecko"
+WORKDIR /app
+
+# Copy package.json and package-lock.json
+COPY ./package*.json ./
+
+# Install dependencies
+RUN npm install
 
 # Copy the static website files into the Nginx container
-COPY ./index.html /usr/share/nginx/html
-COPY ./favicon.ico /usr/share/nginx/html
-COPY ./styles /usr/share/nginx/html/styles
-COPY ./scripts /usr/share/nginx/html/scripts
-COPY ./icons /usr/share/nginx/html/icons
+COPY . .
 
+# Build the application
+RUN npm run build
+
+# Stage 2: Use Nginx for serving the static files
 FROM nginx:alpine AS runtime
 RUN addgroup -S nonroot \
     && adduser -S nonroot -G nonroot
 
 # Copy static website files from the builder stage
-COPY --from=builder /usr/share/nginx/html /usr/share/nginx/html
+COPY --from=builder /app/ /usr/share/nginx/html
 
 RUN touch /var/run/nginx.pid
 
@@ -28,4 +35,5 @@ EXPOSE 80
 # Start Nginx when the container has provisioned
 CMD ["nginx", "-g", "daemon off;"]
 
+# Switch to nonroot user
 USER nonroot

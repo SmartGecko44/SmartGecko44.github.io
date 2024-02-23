@@ -36,5 +36,8 @@ A
 scripts/sentry.js,7/7/77584420aa9a5dbb1c866d5aedf8699cdc967949
 A
 webpack.config.js,d/5/d5595158cc48f9bf3e51b06f6e6805a8fd2d6262
-<
-dist/main.js,b/5/b5b42da67bffdeea365f028160637927846ccbd6
+:
+
+.gitignore,a/5/a5cc2925ca8258af241be7e5b0381edf30266302
+>
+dist/bundle.js,1/6/16c34cbfd4059cc585ffb2d9e2b5a1970ecbff22
