@@ -23,6 +23,13 @@
     transition: all 1s ease-in-out;
 }
 
+#darkModeDia.fallback {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 20px;
+}
+
 #darkModeDia::backdrop {
     display: none;
     background-color: rgba(0, 0, 0, 0);

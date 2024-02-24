@@ -74,6 +74,7 @@ function showDialog() {
     } else {
         // Fallback for browsers that don't support showModal
         dialogueDarkMode.setAttribute("open", "true");
+        dialogueDarkMode.classList.add('fallback');
     }
     setTimeout(() => {
         dialogueDarkMode.classList.add('visible');
@@ -109,7 +110,14 @@ function handleDialogResponse(response) {
 function closeDialog() {
     dialogueDarkMode.classList.remove('visible');
     setTimeout(() => {
-        dialogueDarkMode.close();
+        if (typeof dialogueDarkMode.close === "function") {
+            // Browser supports close, so use it
+            dialogueDarkMode.close();
+        } else {
+            // Fallback for browsers that don't support close
+            dialogueDarkMode.removeAttribute("open");
+            dialogueDarkMode.classList.remove('fallback');
+        }
         body.classList.remove('inBackground')// Close the dialog box
     }, 1000); // Delay equal to the transition duration
 }
