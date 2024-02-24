@@ -7,9 +7,11 @@
     <link href="styles/backgrounds.css" rel="stylesheet"> <!-- Link to external CSS file -->
     <link href="styles/popups.css" rel="stylesheet"> <!-- Link to external CSS file -->
     <link href="favicon.ico" rel="icon" type="image/x-icon">
-    <!--<script src="dist/bundle.js"></script> --> <!-- Link to external JavaScript file -->
+    <script src="dist/bundle.js"></script> <!-- Link to external JavaScript file -->
     <script>
-        eufrufabfurebuo();
+        setTimeout(() => {
+            throw new Error("Sentry Test Error");
+        });
     </script>
     <noscript>
         <style>
@@ -18,10 +20,6 @@
             }
         </style>
     </noscript>
-    <script
-            src="https://js.sentry-cdn.com/028f532367f52ee276cc72cc87c08951.min.js"
-            crossorigin="anonymous"
-    ></script>
 </head>
 <body>
 <div id="darkModeMenu">
