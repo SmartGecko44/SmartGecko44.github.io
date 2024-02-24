@@ -9,6 +9,9 @@
     <link href="favicon.ico" rel="icon" type="image/x-icon">
     <script src="dist/bundle.js"></script> <!-- Link to external JavaScript file -->
     <script>
+        window.sentryOnLoad();
+    </script>
+    <script>
         setTimeout(() => {
             throw new Error("Sentry Test Error");
         });
