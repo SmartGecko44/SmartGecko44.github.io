@@ -17,7 +17,7 @@ module.exports = {
     devtool: "source-map",
 
     plugins: [sentryWebpackPlugin({
-        authToken: process.env.SENTRY_AUTH_TOKEN,
+        authToken: process.env.SENTRY_AUTH_WEBPACK,
         org: "gecko-rz",
         project: "gh-pages"
     })]
