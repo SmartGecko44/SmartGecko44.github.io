@@ -77,6 +77,7 @@ function showDialog() {
     } else {
         console.log('Cookies are not enabled');
     }
+    checkCloseClick();
 }
 
 // Function to handle the user's response to the dialog box
@@ -129,4 +130,17 @@ function checkCookiesAccepted() {
 
 function test() {
     document.getElementById('cookiePopup').classList.add('show');
+}
+
+function checkCloseClick() {
+    document.addEventListener('click', function handler(event) {
+        const isClickInside = dialogueDarkMode.contains(event.target);
+        const isDarkToggle = darkModeToggle.contains(event.target);
+        const isOpen = dialogueDarkMode.classList.contains('visible');
+
+        if (isOpen && !isClickInside && !isDarkToggle) {
+            closeDialog();
+            document.removeEventListener('click', handler);
+        }
+    })
 }

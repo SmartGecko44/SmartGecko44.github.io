@@ -8,6 +8,6 @@ window.sentryOnLoad = function () {
         integrations: [
             Sentry.browserTracingIntegration(),
         ],
-        tracePropagationTargets: ['https://gxcko.me']
+        tracePropagationTargets: ['https://gxcko.me'],
     });
 };
