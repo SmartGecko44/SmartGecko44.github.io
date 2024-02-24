@@ -67,7 +67,14 @@ function hasDialogBeenShown() {
 
 // Function to show the dialog box
 function showDialog() {
-    dialogueDarkMode.showModal(); // Show the dialog box
+    // Check if the browser supports the showModal function
+    if (typeof HTMLDialogElement.prototype.showModal === "function") {
+        // Browser supports showModal, so use it
+        dialogueDarkMode.showModal();
+    } else {
+        // Fallback for browsers that don't support showModal
+        dialogueDarkMode.setAttribute("open", "true");
+    }
     setTimeout(() => {
         dialogueDarkMode.classList.add('visible');
     }, 50);
