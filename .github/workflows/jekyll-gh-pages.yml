@@ -29,7 +29,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Setup Node.js environment
-        uses: actions/setup-node@20
+        uses: actions/setup-node@v4.0.2
+        with:
+          node-version: 20
       - name: Install Node dependencies
         run: npm install --ignore-scripts
       - name: Package using Webpack
