@@ -1,47 +1,27 @@
 
+@
+scripts/modes.js,0/9/0990b82fef81f6e0d9f31a1e70346676b531ecfa
+A
+styles/popups.css,e/3/e3a9c3bcf3131e86b8257a60378be6dc7b6fa2fb
 :
 
 index.html,f/6/f6013a00b362253c64368d6eebc50ea2131754e2
-A
-styles/popups.css,e/3/e3a9c3bcf3131e86b8257a60378be6dc7b6fa2fb
+L
+.github/workflows/sentry.yml,a/c/aca2c2ea96abdc787a922ddd5f3ef3daf442163e
+U
+%.github/workflows/jekyll-gh-pages.yml,5/d/5de61e7490f642547881c94c5e01dcc1a1dd8525
 F
-styles/backgrounds.css,1/4/14dc454ef15370532080c4478ced95a4c7fa223f
-@
-scripts/modes.js,0/9/0990b82fef81f6e0d9f31a1e70346676b531ecfa
-T
-$.github/workflows/publish-docker.yml,a/4/a4f1d2a47291643bbc3040ef74ed6b3caa228e18
-9
-	README.md,8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
-5
-CNAME,b/9/b9c1aaaf65573c7e15b93b6d826729e7711cf242
-B
-icons/contrast.svg,d/8/d84b016ddaef863003add4343797e8d95ea128c6
+.github/dependabot.yml,0/9/091aff741808a09242f252264b14f4a9adaa5305
 :
 
 Dockerfile,6/6/6651ddff6eb82c840ced7c1dddee15c6e1913dd4
-J
-redirect/genshin-util.html,6/0/6046d7b888d42562097b83f42ea07b3a13b3c2d4
-:
-
-LICENSE.md,4/a/4a8486805915245bbbe2e3c8c1a9d680c6843a82
-L
-.github/workflows/sentry.yml,a/c/aca2c2ea96abdc787a922ddd5f3ef3daf442163e
-<
-package.json,7/0/7030d0b2f71b999ff89a343de08c414af32fc93a
-A
-package-lock.json,f/a/fa288d1472d29beccb489a676f68739ad365fc47
-F
-.github/dependabot.yml,0/9/091aff741808a09242f252264b14f4a9adaa5305
 A
 scripts/sentry.js,7/7/77584420aa9a5dbb1c866d5aedf8699cdc967949
-A
-webpack.config.js,d/5/d5595158cc48f9bf3e51b06f6e6805a8fd2d6262
-:
-
-.gitignore,a/5/a5cc2925ca8258af241be7e5b0381edf30266302
->
-dist/bundle.js,1/6/16c34cbfd4059cc585ffb2d9e2b5a1970ecbff22
-L
-.github/workflows/deploy.yml,f/1/f130ad0d1d16d0d70ec30d355f736ae3784b05cf
-U
-%.github/workflows/jekyll-gh-pages.yml,5/d/5de61e7490f642547881c94c5e01dcc1a1dd8525
+9
+	README.md,8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
+P
+ .github/pull_request_template.md,9/9/99d2d4406193bf0dc3e7b84a6c9b9109997a4864
+Y
+).github/ISSUE_TEMPLATE/feature_request.md,6/7/67c0231b0ea83057a5f5c051eb28641a29af34a6
+T
+$.github/ISSUE_TEMPLATE/bug_report.md,a/0/a03585ab89eed5e0782a1875b2d8153b97865d30
