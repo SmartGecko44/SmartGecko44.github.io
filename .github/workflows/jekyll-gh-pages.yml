@@ -51,6 +51,10 @@ jobs:
           source: ./
           destination: ./_site
 
+      - name: Generate sitemap
+        run: bundle exec jekyll build --destination ./_site
+        working-directory: ./
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
 
