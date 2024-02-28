@@ -7,18 +7,24 @@ permissions:
   packages: write
 
 jobs:
-  build_docker_image:
+  build_docker_test_image:
     name: Build Docker image
     runs-on: ubuntu-latest
     steps:
       - name: Check out the repo
         uses: actions/checkout@v4
 
+      - name: Prepare PR title
+        run: |
+          PR_TITLE=$(echo "${{ github.event.pull_request.title }}" | tr ' ' '_')
+          echo "::set-env name=PR_TITLE::${PR_TITLE}"
+
       - name: Build Docker image
-        run: docker build -t gxcko.pr:${{ github.event.pull_request.title }}-${{ github.event.pull_request.number }} .
+        run: |
+          docker build -t gxcko.pr:${{ env.PR_TITLE }}-${{ github.event.pull_request.number }} .
 
       - name: Save Docker image artifact
         uses: actions/upload-artifact@v2
         with:
           name: docker-image
-          path: gxcko.pr:${{ github.event.pull_request.title }}-${{ github.event.pull_request.number }}
+          path: gxcko.pr:${{ env.PR_TITLE }}-${{ github.event.pull_request.number }}
