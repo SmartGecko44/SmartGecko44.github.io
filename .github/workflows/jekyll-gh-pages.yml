@@ -45,12 +45,13 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
+      - name: Install Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.0'
+
       - name: Install Bundler
         run: gem install bundler
-        # Make sure Ruby is installed before installing Bundler
-        # uses: ruby/setup-ruby@v1
-        # with:
-        #   ruby-version: '2.7'
 
       - name: Install Gems
         run: bundle install
@@ -60,6 +61,9 @@ jobs:
         with:
           source: ./
           destination: ./_site
+
+      - name: Change permissions of _site directory
+        run: chmod -R 777 _site
 
       - name: Generate sitemap
         run: bundle exec jekyll build --destination ./_site
