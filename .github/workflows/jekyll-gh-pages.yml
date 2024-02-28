@@ -62,13 +62,6 @@ jobs:
           source: ./
           destination: ./_site
 
-      - name: Change permissions of _site directory
-        run: chmod -R 777 _site
-
-      - name: Generate sitemap
-        run: bundle exec jekyll build --destination ./_site
-        working-directory: ./
-
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
 
