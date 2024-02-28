@@ -25,7 +25,7 @@ jobs:
           docker build -t gxcko.pr:${{ steps.pr_title.outputs.pr_title }}-${{ github.event.pull_request.number }} .
 
       - name: Save Docker image artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: docker-image
           path: gxcko.pr:${{ steps.pr_title.outputs.pr_title }}-${{ github.event.pull_request.number }}
