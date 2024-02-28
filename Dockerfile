@@ -1,5 +1,5 @@
 # Use the Node.js image as builder stage
-FROM node:20 AS builder
+FROM node:21 AS builder
 LABEL authors="gecko"
 WORKDIR /app
 
