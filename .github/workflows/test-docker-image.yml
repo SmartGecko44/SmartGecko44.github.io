@@ -1,0 +1,25 @@
+name: Docker Image Creation Test
+
+on: pull_request
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  build_docker_image:
+    name: Build Docker image
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repo
+        uses: actions/checkout@v4
+
+      - name: Build Docker image
+        run: |
+          docker build -t gxcko-pr:${{ github.event.pull_request.title }}-${{ github.event.pull_request.number }} .
+
+      - name: Save Docker image artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: docker-image
+          path: gxcko-pr:${{ github.event.pull_request.title }}-${{ github.event.pull_request.number }}
