@@ -16,9 +16,11 @@ jobs:
 
       - name: Prepare PR title
         id: pr_title
-        run: echo "::set-output name=pr_title::$(echo "${{ github.event.pull_request.title }}" | tr ' ' '_')"
+        run: |
+          PR_TITLE=$(echo "${{ github.event.pull_request.title }}" | tr ' /' '_')
+          echo "::set-output name=pr_title::${PR_TITLE}"
 
-      - name: Build Docker test image
+      - name: Build Docker image
         run: |
           docker build -t gxcko.pr:${{ steps.pr_title.outputs.pr_title }}-${{ github.event.pull_request.number }} .
 
@@ -26,4 +28,4 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: docker-image
-          path: docker.io/library/gxcko.pr:${{ steps.pr_title.outputs.pr_title }}-${{ github.event.pull_request.number }}
+          path: gxcko.pr:${{ steps.pr_title.outputs.pr_title }}-${{ github.event.pull_request.number }}
