@@ -15,11 +15,10 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Build Docker image
-        run: |
-          docker build -t gxcko-pr:${{ github.event.pull_request.title }}-${{ github.event.pull_request.number }} .
+        run: docker build -t gxcko.pr:${{ github.event.pull_request.title }}-${{ github.event.pull_request.number }} .
 
       - name: Save Docker image artifact
         uses: actions/upload-artifact@v2
         with:
           name: docker-image
-          path: gxcko-pr:${{ github.event.pull_request.title }}-${{ github.event.pull_request.number }}
+          path: gxcko.pr:${{ github.event.pull_request.title }}-${{ github.event.pull_request.number }}
