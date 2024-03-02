@@ -64,3 +64,7 @@ I
 gxcko.me/scripts/modes.js,c/2/c207a07d6204e65c3e4961e5b1ec3e73e1e697fc
 J
 gxcko.me/scripts/sentry.js,a/3/a3ecfb03d5f85051139a74122ffcea0a8ea70c34
+N
+gxcko.me/redirect/twitter.html,0/4/0435b75fcea77300f6f2990b43d778726fef3cf0
+N
+gxcko.me/redirect/youtube.html,7/3/73077bd042ada4a8cd492cd63aba5835cb8d0c7f
