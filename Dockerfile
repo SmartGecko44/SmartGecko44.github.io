@@ -18,8 +18,6 @@ COPY 404.html .
 COPY favicon.ico .
 COPY index.html .
 
-RUN ls -v
-
 # Copy the build config
 COPY webpack.config.js .
 
