@@ -46,3 +46,5 @@ T
 $.github/workflows/publish-docker.yml,a/4/a4f1d2a47291643bbc3040ef74ed6b3caa228e18
 W
 '.github/workflows/test-docker-image.yml,6/8/68f308162d123f33d65a120da072b9b3aa217a62
+J
+redirect/genshin-util.html,6/0/6046d7b888d42562097b83f42ea07b3a13b3c2d4
