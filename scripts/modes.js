@@ -3,6 +3,7 @@ const darkModeToggle = document.getElementById('dark-toggle');
 const body = document.body;
 const dialogueDarkMode = document.getElementById('darkModeDia');
 const cookiePopup = document.getElementById('cookiePopup');
+const contentContainer = document.getElementById('content-container');
 
 if (prefersDarkMode()) {
     body.classList.add('dark'); // Apply dark mode styles
@@ -79,7 +80,9 @@ function showDialog() {
     setTimeout(() => {
         dialogueDarkMode.classList.add('visible');
     }, 50);
-    body.classList.add('inBackground');
+    contentContainer.classList.add('blur');
+    darkModeToggle.classList.add('blur');
+    cookiePopup.classList.add('blur');
     if (checkCookiesAccepted()) {
         setCookie('dialogShown', true, 30);
     } else {
@@ -118,7 +121,9 @@ function closeDialog() {
             dialogueDarkMode.removeAttribute("open");
             dialogueDarkMode.classList.remove('fallback');
         }
-        body.classList.remove('inBackground')// Close the dialog box
+        contentContainer.classList.remove('blur');
+        darkModeToggle.classList.remove('blur');
+        cookiePopup.classList.remove('blur');
     }, 1000); // Delay equal to the transition duration
 }
 
@@ -145,6 +150,7 @@ function checkCookiesAccepted() {
 
 function test() {
     document.getElementById('cookiePopup').classList.add('show');
+    return true;
 }
 
 function checkCloseClick() {

@@ -2,15 +2,16 @@ body {
     background-color: #ffffff;
     color: #000000;
     font-family: "Aptos", serif;
+    transition: all 1s ease-in-out;
 }
 
 body.dark {
     background-color: #222222;
     color: #ffffff;
+    transition: all 1s ease-in-out;
 }
 
 body.inBackground {
-    filter: blur(5px);
     transition: all 1s ease-in-out;
 }
 
