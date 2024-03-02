@@ -10,13 +10,13 @@ COPY ./package*.json ./
 RUN npm install --ignore-scripts
 
 # Copy the static website files into the Nginx container
-COPY ./icons ./icons/
-COPY ./redirect ./redirct/
-COPY ./scripts ./scripts/
-COPY ./styles ./styles/
-COPY 404.html .
-COPY favicon.ico .
-COPY index.html .
+COPY gxcko.me/icons ./icons/
+COPY gxcko.me/redirect ./redirct/
+COPY gxcko.me/scripts ./scripts/
+COPY gxcko.me/styles ./styles/
+COPY gxcko.me/404.html .
+COPY gxcko.me/favicon.ico .
+COPY gxcko.me/index.html .
 
 RUN ls -v
 

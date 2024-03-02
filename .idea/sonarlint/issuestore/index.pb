@@ -48,3 +48,19 @@ W
 '.github/workflows/test-docker-image.yml,6/8/68f308162d123f33d65a120da072b9b3aa217a62
 J
 redirect/genshin-util.html,6/0/6046d7b888d42562097b83f42ea07b3a13b3c2d4
+C
+gxcko.me/index.html,b/7/b79f0003805511ae806f7e33f5782062e101d0ca
+S
+#gxcko.me/redirect/genshin-util.html,9/7/97e5aa2277ea4409e286b869db31c0f5222ecc38
+K
+gxcko.me/icons/contrast.svg,9/5/95cb66e402a7bb806d61ffdea34410e6f18174dc
+O
+gxcko.me/styles/backgrounds.css,3/3/330d4a9c49c4726b9f01b6c860ed4321cc8dc3f1
+A
+gxcko.me/404.html,3/d/3d2442e772e8ddf24707f56e3bd6d23f6c77347b
+J
+gxcko.me/styles/popups.css,e/7/e73cd02a7d2963ac2a444e462abe0f1af307d6ba
+I
+gxcko.me/scripts/modes.js,c/2/c207a07d6204e65c3e4961e5b1ec3e73e1e697fc
+J
+gxcko.me/scripts/sentry.js,a/3/a3ecfb03d5f85051139a74122ffcea0a8ea70c34
