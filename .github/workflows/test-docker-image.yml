@@ -1,6 +1,9 @@
 name: Docker Image Creation Test
 
-on: pull_request
+on:
+  pull_request:
+    branches:
+      - main
 
 permissions:
   contents: read
@@ -20,7 +23,7 @@ jobs:
           PR_TITLE=$(echo "${{ github.event.pull_request.title }}" | tr ' /@' '_')
           echo "::set-output name=pr_title::${PR_TITLE}"
 
-      - name: Build Docker image
+      - name: Build Docker test image
         run: |
           docker build -t gxcko.pr:${{ steps.pr_title.outputs.pr_title }}-${{ github.event.pull_request.number }} .
 
@@ -28,4 +31,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: docker-image
-          path: gxcko.pr:${{ steps.pr_title.outputs.pr_title }}-${{ github.event.pull_request.number }}
+          # path: gxcko.pr:${{ steps.pr_title.outputs.pr_title }}-${{ github.event.pull_request.number }}

@@ -16,7 +16,7 @@
     border: 2px solid #333333;
     border-radius: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
+    z-index: 100;
     font-family: "Aptos", serif;
     background: linear-gradient(to bottom right, #FF6D6A, #EFBE7D, #E9EC6B, #8BD3E6, #E9CDD0, #B1A2CA);
     opacity: 0;
@@ -103,6 +103,11 @@
     transition: all 0.5s ease-out;
 }
 
+#dark-toggle.blur {
+    filter: blur(5px);
+    transition: all 1s ease-in-out;
+}
+
 /* Media query for small screen widths */
 @media (max-width: 300px) {
     #darkModeDia .button-container {
@@ -117,6 +122,7 @@
 }
 
 #cookiePopup {
+    display: block;
     color: black;
     position: fixed;
     bottom: -200px; /* Start off the screen */
@@ -137,6 +143,10 @@
 
 #cookiePopup.show {
     bottom: 50px; /* Move to this position when shown */
+}
+
+#cookiePopup.hide {
+    display: none;
 }
 
 #cookiePopup .button-container {
@@ -160,6 +170,11 @@
     background-color: #ddd;
     color: #333;
     transition: border-radius 0.3s ease-in-out; /* Add transition */
+}
+
+#cookiePopup.blur {
+    filter: blur(5px);
+    transition: all 1s ease-in-out; /* Add transition */
 }
 
 @media (max-width: 331px) {

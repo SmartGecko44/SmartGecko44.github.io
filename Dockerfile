@@ -10,7 +10,18 @@ COPY ./package*.json ./
 RUN npm install --ignore-scripts
 
 # Copy the static website files into the Nginx container
-COPY . .
+COPY ./icons ./icons/
+COPY ./redirect ./redirct/
+COPY ./scripts ./scripts/
+COPY ./styles ./styles/
+COPY 404.html .
+COPY favicon.ico .
+COPY index.html .
+
+RUN ls -v
+
+# Copy the build config
+COPY webpack.config.js .
 
 # Build the application
 RUN npm run build

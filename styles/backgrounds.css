@@ -10,7 +10,6 @@ body.dark {
 }
 
 body.inBackground {
-    filter: blur(5px);
     transition: all 1s ease-in-out;
 }
 
@@ -28,4 +27,12 @@ body.inBackground {
     font-size: xxx-large;
     margin: 0;
     animation: gradient-animation 30s linear infinite;
+}
+
+#content-container {
+}
+
+#content-container.blur {
+    filter: blur(5px);
+    transition: all 1s ease-in-out;
 }
