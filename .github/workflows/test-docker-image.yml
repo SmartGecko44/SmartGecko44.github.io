@@ -31,4 +31,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: docker-image
-          # path: gxcko.pr:${{ steps.pr_title.outputs.pr_title }}-${{ github.event.pull_request.number }}
+          path: docker.io/library/gxcko.pr:${{ steps.pr_title.outputs.pr_title }}-${{ github.event.pull_request.number }}
