@@ -2,11 +2,13 @@ body {
     background-color: #ffffff;
     color: #000000;
     font-family: "Aptos", serif;
+    transition: all 1s ease-in-out;
 }
 
 body.dark {
     background-color: #222222;
     color: #ffffff;
+    transition: all 1s ease-in-out;
 }
 
 body.inBackground {
@@ -27,12 +29,4 @@ body.inBackground {
     font-size: xxx-large;
     margin: 0;
     animation: gradient-animation 30s linear infinite;
-}
-
-#content-container {
-}
-
-#content-container.blur {
-    filter: blur(5px);
-    transition: all 1s ease-in-out;
 }

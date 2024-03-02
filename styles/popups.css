@@ -105,7 +105,6 @@
 
 #dark-toggle.blur {
     filter: blur(5px);
-    transition: all 1s ease-in-out;
 }
 
 /* Media query for small screen widths */
@@ -174,7 +173,6 @@
 
 #cookiePopup.blur {
     filter: blur(5px);
-    transition: all 1s ease-in-out; /* Add transition */
 }
 
 @media (max-width: 331px) {
@@ -187,4 +185,13 @@
         margin-bottom: 10px;
         transition: margin-bottom 0.75s ease-out; /* Add transition */
     }
+}
+
+#content-container {
+    transition: all 1s ease-in-out;
+}
+
+#content-container.blur {
+    filter: blur(5px);
+    transition: all 1s ease-in-out;
 }
