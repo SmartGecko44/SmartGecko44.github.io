@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "@sentry/browser": "^7.107.0",
+    "@sentry/browser": "^7.108.0",
     "@sentry/webpack-plugin": "^2.16.0",
     "react": "^18.2.0"
   },
