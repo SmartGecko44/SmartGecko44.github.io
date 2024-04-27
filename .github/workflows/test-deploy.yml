@@ -15,7 +15,6 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-
   test-build:
     runs-on: ubuntu-latest
     steps:
@@ -34,7 +33,7 @@ jobs:
         run: npm run build
 
       - name: Setup Pages
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@v4
 
       - name: Install Ruby
         uses: ruby/setup-ruby@v1
@@ -50,8 +49,14 @@ jobs:
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
         with:
-          source: ./
+          source: ./gxcko.me
           destination: ./_site
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+      # Deploy to beta.gxcko.me/{{ pr }} branch
+      - name: Deploy to beta
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_site
+          cname: beta.gxcko.me
+          publish_branch: beta/${{ github.event.number }}
