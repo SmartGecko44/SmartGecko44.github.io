@@ -6,7 +6,7 @@ const path = require('path');
 
 module.exports = {
     // the entry point of your application
-    entry: './gxcko.me/scripts/sentry.js',
+    entry: './scripts/sentry.js',
 
     output: {
         filename: 'bundle.js', // the output filename
