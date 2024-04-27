@@ -80,6 +80,7 @@
     width: 100px;
     border-radius: 25%;
     cursor: pointer;
+    z-index: 800;
     transition: all 1s ease-in-out;
     transform: rotate(180deg);
 }
@@ -132,7 +133,19 @@
     border: 1px solid #ddd;
     border-radius: 15px;
     z-index: 1001;
-    transition: all 0.5s ease-in-out; /* Add transition */
+    transition:
+        display 0.5s ease-in-out,
+        color 0.5s ease-in-out,
+        position 0.5s ease-in-out,
+        bottom 0.5s ease-in-out,
+        left 0.5s ease-in-out,
+        transform 0.5s ease-in-out,
+        padding 0.5s ease-in-out,
+        background-color 0.5s ease-in-out,
+        border 0.5s ease-in-out,
+        border-radius 0.5s ease-in-out,
+        z-index 0.5s ease-in-out,
+        filter 1s ease-in-out;
 }
 
 #cookiePopup.dark {
@@ -194,4 +207,40 @@
 #content-container.blur {
     filter: blur(5px);
     transition: all 1s ease-in-out;
+}
+
+@keyframes gradient-animation {
+    0% { background-position: 0 0; }
+    50% { background-position: 100% 100%; }
+    100% { background-position: 0 0; }
+}
+
+#bottom-banner {
+    text-align: center;
+    align-self: center;
+    position: fixed;
+    bottom: 1%;
+    left: 50%;
+    transform: translateX(-25%);
+    width: fit-content;
+    padding: 15px;
+    background: linear-gradient(to bottom right, #FF6D6A, #EFBE7D, #E9EC6B, #8BD3E6, #E9CDD0, #B1A2CA);
+    background-size: 200% 200%;
+    border-radius: 100px;
+    z-index: 200;
+    transition: all 1s ease-in-out;
+    animation: gradient-animation 30s linear infinite;
+}
+
+#bottom-banner.dark {
+    color: black;
+    opacity: 0.8;
+}
+
+#bottom-banner.blur {
+    filter: blur(5px);
+}
+
+#bottom-banner:hover {
+    opacity: 0.6;
 }

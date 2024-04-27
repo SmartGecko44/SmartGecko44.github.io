@@ -2,3 +2,6 @@
 .env.sentry-build-plugin
 /node_modules/
 /gxcko.me/dist/
+/.idea/sonarlint/
+/.idea/jsLibraryMappings.xml
+/.idea/sonarlint.xml

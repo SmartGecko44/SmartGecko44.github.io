@@ -1,0 +1,33 @@
+#link a {
+    font-size: 20px;
+    color: darkmagenta;
+    transition: all 1s ease-in-out;
+}
+
+#link.dark a {
+    color: pink;
+}
+
+#link a:hover {
+    color: magenta;
+}
+
+#link.dark a:hover {
+    color: deeppink;
+}
+
+@keyframes gradient-animation {
+    0% { background-position: 0 0; }
+    50% { background-position: 100% 100%; }
+    100% { background-position: 0 0; }
+}
+
+#title {
+    background: linear-gradient(to bottom right, #FF6D6A, #EFBE7D, #E9EC6B, #8BD3E6, #E9CDD0, #B1A2CA);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: xxx-large;
+    margin: 0;
+    animation: gradient-animation 30s linear infinite;
+}

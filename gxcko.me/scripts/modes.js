@@ -4,12 +4,11 @@ const body = document.body;
 const dialogueDarkMode = document.getElementById('darkModeDia');
 const cookiePopup = document.getElementById('cookiePopup');
 const contentContainer = document.getElementById('content-container');
+const link = document.getElementById('link');
+const bottomBanner = document.getElementById('bottom-banner');
 
 if (prefersDarkMode()) {
-    body.classList.add('dark'); // Apply dark mode styles
-    darkModeToggle.classList.add('dark'); // Apply dark mode styles
-    dialogueDarkMode.classList.add('dark'); // Apply dark mode styles
-    cookiePopup.classList.add('dark'); // Apply dark mode styles
+    forceDarkMode();
 }
 
 if (!hasDialogBeenShown() && !prefersDarkMode()) {
@@ -38,29 +37,6 @@ function prefersDarkMode() {
     }
 }
 
-// Function to set a cookie
-function setCookie(name, value, days) {
-    let expires = "";
-    if (days) {
-        let date = new Date();
-        date.setTime(date.getTime() + (days*24*60*60*1000));
-        expires = "; expires=" + date.toUTCString();
-    }
-    document.cookie = name + "=" + (value || "")  + expires + "; path=/";
-}
-
-// Function to get a cookie
-function getCookie(name) {
-    let nameEQ = name + "=";
-    let ca = document.cookie.split(';');
-    for(const element of ca) {
-        let c = element;
-        while (c.startsWith(' ')) c = c.substring(1,c.length);
-        if (c.startsWith(nameEQ)) return c.substring(nameEQ.length,c.length);
-    }
-    return null;
-}
-
 // Function to check if the dialog has been shown before
 function hasDialogBeenShown() {
     return !!getCookie('dialogShown');
@@ -80,9 +56,7 @@ function showDialog() {
     setTimeout(() => {
         dialogueDarkMode.classList.add('visible');
     }, 50);
-    contentContainer.classList.add('blur');
-    darkModeToggle.classList.add('blur');
-    cookiePopup.classList.add('blur');
+    addBlur()
     if (checkCookiesAccepted()) {
         setCookie('dialogShown', true, 30);
     } else {
@@ -94,10 +68,7 @@ function showDialog() {
 // Function to handle the user's response to the dialog box
 function handleDialogResponse(response) {
     if (response === 'yes') {
-        body.classList.toggle('dark'); // Apply dark mode styles
-        darkModeToggle.classList.toggle('dark'); // Apply dark mode styles
-        dialogueDarkMode.classList.toggle('dark'); // Apply dark mode styles
-        cookiePopup.classList.toggle('dark'); // Apply dark mode styles
+        toggleDarkMode()
         // Store the dark mode setting in a cookie if the user has cookies enabled
         if (checkCookiesAccepted()) {
             setCookie('darkMode', body.classList.contains('dark'), 30);
@@ -121,9 +92,7 @@ function closeDialog() {
             dialogueDarkMode.removeAttribute("open");
             dialogueDarkMode.classList.remove('fallback');
         }
-        contentContainer.classList.remove('blur');
-        darkModeToggle.classList.remove('blur');
-        cookiePopup.classList.remove('blur');
+        removeBlur()
     }, 1000); // Delay equal to the transition duration
 }
 
@@ -143,10 +112,6 @@ window.onload = function() {
         document.getElementById('cookiePopup').classList.add('show'); /* Show the popup */
     }
 };
-
-function checkCookiesAccepted() {
-    return getCookie('cookiesAccepted') === 'true';
-}
 
 function test() {
     document.getElementById('cookiePopup').classList.add('show');
