@@ -18,8 +18,6 @@ COPY gxcko.me/404.html .
 COPY gxcko.me/favicon.ico .
 COPY gxcko.me/index.html .
 
-RUN ls -v
-
 # Copy the build config
 COPY webpack.config.js .
 
