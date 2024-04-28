@@ -51,15 +51,3 @@ jobs:
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
-
-  # Deployment job
-  test-deploy:
-    environment:
-      name: github-pages
-      url: beta.gxcko.me
-    runs-on: ubuntu-latest
-    needs: test-build
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
