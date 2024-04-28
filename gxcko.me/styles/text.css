@@ -1,18 +1,19 @@
-body {
-    background-color: #ffffff;
-    color: #000000;
-    font-family: "Aptos", serif;
+#link a {
+    font-size: 20px;
+    color: darkmagenta;
     transition: all 1s ease-in-out;
 }
 
-body.dark {
-    background-color: #222222;
-    color: #ffffff;
-    transition: all 1s ease-in-out;
+#link.dark a {
+    color: pink;
 }
 
-body.inBackground {
-    transition: all 1s ease-in-out;
+#link a:hover {
+    color: magenta;
+}
+
+#link.dark a:hover {
+    color: deeppink;
 }
 
 @keyframes gradient-animation {

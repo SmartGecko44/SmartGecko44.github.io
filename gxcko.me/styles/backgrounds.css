@@ -1,0 +1,28 @@
+body {
+    background-color: #ffffff;
+    color: #000000;
+    font-family: "Aptos", serif;
+    transition: all 1s ease-in-out;
+}
+
+body.dark {
+    background-color: #222222;
+    color: #ffffff;
+    transition: all 1s ease-in-out;
+}
+
+body.inBackground {
+    transition: all 1s ease-in-out;
+}
+
+.bubble {
+    background: #000000;
+    border: 2px solid red;
+    padding: 20px;
+    border-radius: 100px;
+    width: fit-content;
+}
+
+.bubble.dark {
+    background: darkgray;
+}

@@ -1,4 +1,7 @@
 # Sentry Config File
 .env.sentry-build-plugin
-/dist/
 /node_modules/
+/gxcko.me/dist/
+/.idea/sonarlint/
+/.idea/jsLibraryMappings.xml
+/.idea/sonarlint.xml

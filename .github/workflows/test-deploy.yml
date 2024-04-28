@@ -5,10 +5,7 @@ on:
     branches:
       - main
 
-permissions:
-  contents: read
-  pages: write
-  id-token: write
+permissions: write-all
 
 concurrency:
   group: "pages"
@@ -52,11 +49,5 @@ jobs:
           source: ./gxcko.me
           destination: ./_site
 
-      # Deploy to beta.gxcko.me/{{ pr }} branch
-      - name: Deploy to beta
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./_site
-          cname: beta.gxcko.me
-          publish_branch: beta/${{ github.event.number }}
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
