@@ -30,7 +30,7 @@ RUN addgroup -S nonroot \
     && adduser -S nonroot -G nonroot
 
 # Copy static website files from the builder stage
-COPY --from=builder /app/ /usr/share/nginx/html
+COPY --from=builder /app/gxcko.me/ /usr/share/nginx/html
 
 RUN touch /var/run/nginx.pid
 
