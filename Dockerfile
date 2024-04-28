@@ -10,13 +10,13 @@ COPY ./package*.json ./
 RUN npm install --ignore-scripts
 
 # Copy the static website files into the Nginx container
-COPY gxcko.me/icons ./icons/
-COPY gxcko.me/redirect ./redirct/
-COPY gxcko.me/scripts ./scripts/
-COPY gxcko.me/styles ./styles/
-COPY gxcko.me/404.html .
-COPY gxcko.me/favicon.ico .
-COPY gxcko.me/index.html .
+COPY gxcko.me/icons ./gxcko.me/icons/
+COPY gxcko.me/redirect ./gxcko.me/redirct/
+COPY gxcko.me/scripts ./gxcko.me/scripts/
+COPY gxcko.me/styles ./gxcko.me/styles/
+COPY gxcko.me/404.html .gxcko.me/
+COPY gxcko.me/favicon.ico .gxcko.me/
+COPY gxcko.me/index.html .gxcko.me/
 
 # Copy the build config
 COPY webpack.config.js .
