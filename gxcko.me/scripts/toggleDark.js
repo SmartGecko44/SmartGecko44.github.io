@@ -5,6 +5,9 @@ function forceDarkMode() {
     cookiePopup.classList.add('dark'); // Apply dark mode styles
     link.classList.add('dark');
     bottomBanner.classList.add('dark');
+    Array.from(bubble).forEach(element => {
+        element.classList.add('dark');
+    });
 }
 
 function toggleDarkMode() {
@@ -14,4 +17,7 @@ function toggleDarkMode() {
     cookiePopup.classList.toggle('dark'); // Apply dark mode styles
     link.classList.toggle('dark')
     bottomBanner.classList.toggle('dark');
+    Array.from(bubble).forEach(element => {
+        element.classList.toggle('dark');
+    });
 }

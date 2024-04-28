@@ -16,13 +16,20 @@ body.inBackground {
 }
 
 .bubble {
-    background: #000000;
-    border: 2px solid red;
+    background: lightgray;
     padding: 20px;
     border-radius: 100px;
     width: fit-content;
 }
 
+.bubble:hover {
+    background: gray;
+}
+
 .bubble.dark {
-    background: darkgray;
+    background: #3a3a3a;
+}
+
+.bubble.dark:hover {
+    background: rgba(58, 58, 58, 0.5); /* dimgray with 60% opacity */
 }
