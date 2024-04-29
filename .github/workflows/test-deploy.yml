@@ -32,22 +32,14 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
-      - name: Install Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: '3.0'
-
-      - name: Install Bundler
-        run: gem install bundler
-
-      - name: Install Gems
-        run: bundle install
-
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
         with:
           source: ./gxcko.me
           destination: ./_site
+
+      - name: generate-sitemap
+        uses: cicirello/generate-sitemap@v1.10.0
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
