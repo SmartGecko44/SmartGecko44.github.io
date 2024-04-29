@@ -91,23 +91,23 @@ function closeDialog() {
 
 document.getElementById('accept').addEventListener('click', function() {
     document.cookie = "cookiesAccepted=true; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/";
-    document.getElementById('cookiePopup').classList.remove('show'); /* Hide the popup */
+    cookiePopup.classList.remove('show'); /* Hide the popup */
 });
 
 document.getElementById('decline').addEventListener('click', function() {
-    document.getElementById('cookiePopup').classList.remove('show'); /* Hide the popup */
+    cookiePopup.classList.remove('show'); /* Hide the popup */
 });
 
 window.onload = function() {
     if (getCookie('cookiesAccepted')) {
-        document.getElementById('cookiePopup').classList.remove('show');
+        cookiePopup.classList.remove('show');
     } else {
-        document.getElementById('cookiePopup').classList.add('show'); /* Show the popup */
+        cookiePopup.classList.add('show'); /* Show the popup */
     }
 };
 
 function test() {
-    document.getElementById('cookiePopup').classList.add('show');
+    cookiePopup.classList.add('show');
     return true;
 }
 
