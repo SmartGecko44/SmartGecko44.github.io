@@ -7,10 +7,6 @@ on:
 
 permissions: write-all
 
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
-
 jobs:
   test-build:
     runs-on: ubuntu-latest
