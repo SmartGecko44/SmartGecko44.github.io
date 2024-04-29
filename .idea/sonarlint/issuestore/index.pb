@@ -82,3 +82,7 @@ K
 gxcko.me/scripts/cookies.js,3/7/372cda30b610400b54ab804c96dc40491b88c4db
 J
 gxcko.me/scripts/consts.js,8/a/8a8d58c13b9949dd25f0d90fd2db1b09fec42f67
+7
+_config,7/e/7e810b571e2a85b1cddc0e908de1caeb71d0b7a2
+D
+gxcko.me/_config.yml,1/a/1a14184fcd86f25448552b1a34794f3368bd2788
