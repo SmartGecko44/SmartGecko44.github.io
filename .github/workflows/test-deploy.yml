@@ -40,6 +40,8 @@ jobs:
 
       - name: generate-sitemap
         uses: cicirello/generate-sitemap@v1.10.0
+        with:
+          base-url-path: https://gxcko.me/
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
