@@ -45,17 +45,6 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
-      - name: Install Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: '3.0'
-
-      - name: Install Bundler
-        run: gem install bundler
-
-      - name: Install Gems
-        run: bundle install
-
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
         with:
