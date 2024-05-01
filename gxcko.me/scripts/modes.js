@@ -92,22 +92,27 @@ function closeDialog() {
 document.getElementById('accept').addEventListener('click', function() {
     document.cookie = "cookiesAccepted=true; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/";
     cookiePopup.classList.remove('show'); /* Hide the popup */
+    setTimeout(() => cookiePopup.classList.add('hide'), 1000);
 });
 
 document.getElementById('decline').addEventListener('click', function() {
     cookiePopup.classList.remove('show'); /* Hide the popup */
+    setTimeout(() => cookiePopup.classList.add('hide'), 1000);
 });
 
 window.onload = function() {
     if (getCookie('cookiesAccepted')) {
         cookiePopup.classList.remove('show');
+        setTimeout(() => cookiePopup.classList.add('hide'), 1000);
     } else {
-        cookiePopup.classList.add('show'); /* Show the popup */
+        cookiePopup.classList.remove('hide');
+        setTimeout(() => cookiePopup.classList.add('show'), 1); /* Show the popup */
     }
 };
 
 function test() {
-    cookiePopup.classList.add('show');
+    cookiePopup.classList.remove('hide');
+    setTimeout(() => cookiePopup.classList.add('show'), 1);
     return true;
 }
 
