@@ -1,7 +1,13 @@
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
+function googleAnalytics() {
+    window.dataLayer = window.dataLayer || [];
 
-gtag('config', 'G-MJD6FZJPCB');
+    function gtag() {
+        dataLayer.push(arguments);
+    }
 
-console.log("Google Analytics loaded.");
+    gtag('js', new Date());
+
+    gtag('config', 'G-MJD6FZJPCB');
+
+    console.log("Google Analytics loaded.");
+}
