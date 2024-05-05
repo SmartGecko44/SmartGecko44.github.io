@@ -1,4 +1,4 @@
-function googleAnalytics() {
+window.googleOnLoad = function () {
     window.dataLayer = window.dataLayer || [];
 
     function gtag() {
