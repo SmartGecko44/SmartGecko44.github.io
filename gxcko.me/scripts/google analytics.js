@@ -3,3 +3,5 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 
 gtag('config', 'G-MJD6FZJPCB');
+
+console.log("Google Analytics loaded.");
