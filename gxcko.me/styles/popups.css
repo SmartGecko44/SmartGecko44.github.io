@@ -77,10 +77,9 @@
     transform: rotate(180deg);
 }
 
-/* TODO: Add radial falloff around the edges */
-
 #dark-toggle:hover {
     background-color: #afafaf;
+    border-radius: 50%;
     transform: rotate(170deg);
     transition: all 0.5s ease-out;
 }
@@ -92,6 +91,7 @@
 
 #dark-toggle.dark:hover {
     background-color: darkgray;
+    border-radius: 50%;
     transform: rotate(10deg);
     transition: all 0.5s ease-out;
 }
@@ -125,17 +125,8 @@
     border-radius: 15px;
     z-index: 1001;
     transition:
-        display 0.5s ease-in-out,
-        color 0.5s ease-in-out,
-        position 0.5s ease-in-out,
-        bottom 0.5s ease-in-out,
+        all 0.5s ease-in-out,
         right 1s ease-in-out,
-        transform 0.5s ease-in-out,
-        padding 0.5s ease-in-out,
-        background-color 0.5s ease-in-out,
-        border 0.5s ease-in-out,
-        border-radius 0.5s ease-in-out,
-        z-index 0.5s ease-in-out,
         filter 1s ease-in-out;
 }
 
@@ -217,9 +208,9 @@
     padding: 15px;
     background: linear-gradient(to bottom right, #FF6D6A, #EFBE7D, #E9EC6B, #8BD3E6, #E9CDD0, #B1A2CA);
     background-size: 200% 200%;
-    border-radius: 100px;
+    border-radius: 20px;
     z-index: 200;
-    transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out, opacity 1.5s ease-in-out;
     animation: gradient-animation 30s linear infinite;
 }
 
@@ -233,5 +224,6 @@
 }
 
 #bottom-banner:hover {
-    opacity: 0.6;
+    opacity: 0.2;
+    border-radius: 50px;
 }
