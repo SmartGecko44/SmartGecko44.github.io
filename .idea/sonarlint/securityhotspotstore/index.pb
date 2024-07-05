@@ -78,5 +78,3 @@ B
 CODE_OF_CONDUCT.md,0/8/0834ae016f8fea5cff771880c0be1d55299732ff
 H
 gxcko.me/styles/text.css,a/b/abf1eee665d5a5830a98aac81af4492667c61303
-T
-$gxcko.me/scripts/google-analytics.js,c/0/c0439a90d80ff833b744fdc178f2c6b9f9126d4e
