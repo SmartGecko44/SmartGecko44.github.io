@@ -35,3 +35,5 @@ A
 package-lock.json,f/a/fa288d1472d29beccb489a676f68739ad365fc47
 W
 '.github/workflows/test-docker-image.yml,6/8/68f308162d123f33d65a120da072b9b3aa217a62
+A
+webpack.config.js,d/5/d5595158cc48f9bf3e51b06f6e6805a8fd2d6262
