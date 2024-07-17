@@ -20,7 +20,7 @@ jobs:
       - name: Prepare PR title
         id: pr_title
         run: |
-          PR_TITLE=$(echo "${{ github.event.pull_request.title }}" | tr ' /@' '_')
+          PR_TITLE=$(echo "${{ github.event.pull_request.title }}" | tr ' /@+' '_')
           echo "::set-output name=pr_title::${PR_TITLE}"
 
       - name: Build Docker test image
