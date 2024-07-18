@@ -97,6 +97,15 @@ const DarkModeToggle: React.FC = () => {
 
     return (
         <div id="darkModeMenu">
+            <noscript>
+                <style>
+                    {`
+                    #darkModeDia {
+                        display: none;
+                    }
+                    `}
+                </style>
+            </noscript>
             <dialog ref={dialogRef} id="darkModeDia" className={theme === 'dark' ? 'dark' : ''}>
                 <p>Would you like to toggle the dark mode?</p>
                 <div className="button-container">
