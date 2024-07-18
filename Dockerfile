@@ -14,12 +14,15 @@ COPY gxcko.me/icons ./gxcko.me/icons/
 COPY gxcko.me/redirect ./gxcko.me/redirct/
 COPY gxcko.me/scripts ./gxcko.me/scripts/
 COPY gxcko.me/styles ./gxcko.me/styles/
+COPY gxcko.me/src ./gxcko.me/src/
 COPY gxcko.me/404.html ./gxcko.me/
 COPY gxcko.me/favicon.ico ./gxcko.me/
 COPY gxcko.me/index.html ./gxcko.me/
+COPY tsconfig*.json ./
+COPY vite.config.ts ./
 
 # Copy the build config
-COPY webpack.config.js .
+COPY webpack.config.js ./
 
 # Build the application
 RUN npm run build
