@@ -7,11 +7,11 @@ WORKDIR /app
 COPY ./package*.json ./
 
 # Install dependencies
-RUN npm install --ignore-scripts
+RUN npm install
 
-# Copy the static website files into the Nginx container
+# Copy the static website files into the container
 COPY gxcko.me/icons ./gxcko.me/icons/
-COPY gxcko.me/redirect ./gxcko.me/redirct/
+COPY gxcko.me/redirect ./gxcko.me/redirect/
 COPY gxcko.me/scripts ./gxcko.me/scripts/
 COPY gxcko.me/styles ./gxcko.me/styles/
 COPY gxcko.me/src ./gxcko.me/src/

@@ -9,8 +9,6 @@ W
 CNAME,b/9/b9c1aaaf65573c7e15b93b6d826729e7711cf242
 C
 gxcko.me/index.html,b/7/b79f0003805511ae806f7e33f5782062e101d0ca
-I
-gxcko.me/scripts/modes.js,c/2/c207a07d6204e65c3e4961e5b1ec3e73e1e697fc
 O
 gxcko.me/styles/backgrounds.css,3/3/330d4a9c49c4726b9f01b6c860ed4321cc8dc3f1
 J
@@ -28,20 +26,14 @@ F
 .github/dependabot.yml,0/9/091aff741808a09242f252264b14f4a9adaa5305
 Y
 ).github/ISSUE_TEMPLATE/feature_request.md,6/7/67c0231b0ea83057a5f5c051eb28641a29af34a6
-H
-gxcko.me/scripts/blur.js,0/f/0f3a9c4db9a4227939a08bfe9811b3e42fd2f5a6
 T
 $.github/workflows/publish-docker.yml,a/4/a4f1d2a47291643bbc3040ef74ed6b3caa228e18
 T
 $.github/ISSUE_TEMPLATE/bug_report.md,a/0/a03585ab89eed5e0782a1875b2d8153b97865d30
-N
-gxcko.me/scripts/toggleDark.js,9/e/9ee391234ea2c00894bdf1beff905db674effadf
 L
 .github/workflows/sentry.yml,a/c/aca2c2ea96abdc787a922ddd5f3ef3daf442163e
 K
 gxcko.me/icons/contrast.svg,9/5/95cb66e402a7bb806d61ffdea34410e6f18174dc
-J
-gxcko.me/scripts/consts.js,8/a/8a8d58c13b9949dd25f0d90fd2db1b09fec42f67
 :
 
 Dockerfile,6/6/6651ddff6eb82c840ced7c1dddee15c6e1913dd4
@@ -106,3 +98,5 @@ T
 $gxcko.me/scripts/google-analytics.js,c/0/c0439a90d80ff833b744fdc178f2c6b9f9126d4e
 \
 ,gxcko.me/src/components/ContentContainer.tsx,8/9/892cd35915ad2d704ebeb6e0ae839c47980469b3
+J
+gxcko.me/src/vite-env.d.ts,6/5/65a371848a91471f76104aed1b983415e0e7e093
