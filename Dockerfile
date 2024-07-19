@@ -32,18 +32,19 @@ FROM nginx:alpine AS runtime
 RUN addgroup -S nonroot \
     && adduser -S nonroot -G nonroot
 
+# Set the working directory to the Nginx directory
+WORKDIR /usr/share/nginx/html
+
 # Copy static website files from the builder stage
-COPY --from=builder /app/gxcko.me/ /usr/share/nginx/html
+COPY --from=builder /app/gxcko.me/ ./
+COPY --from=builder /app/gxcko.me/dist/index.html ./
+COPY --from=builder /app/gxcko.me/dist/assets/ ./assets/
 
 RUN touch /var/run/nginx.pid
 
 # Ensure nonroot user has necessary permissions
 RUN chown -R nonroot:nonroot /var/cache/nginx /var/run /var/log/nginx /var/run/nginx.pid /usr/share/nginx/html
 RUN chmod -R 755 /var/cache/nginx /var/run /var/log/nginx /var/run/nginx.pid /usr/share/nginx/html
-
-WORKDIR /usr/share/nginx/html
-
-COPY gxcko.me/dist ./
 
 # Expose port 80 for the web server
 EXPOSE 80
