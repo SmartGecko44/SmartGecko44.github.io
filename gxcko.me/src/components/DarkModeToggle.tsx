@@ -113,7 +113,7 @@ const DarkModeToggle: React.FC = () => {
                 </div>
             </dialog>
             <img id="dark-toggle" src="../../icons/contrast.svg" alt="Dark Mode Icon"
-                 className={`${theme === 'dark' ? 'dark' : ''} ${blur ? 'blur' : ''}`} onClick={showDialog} onKeyDown={showDialog}/>
+                 className={`${theme === 'dark' ? 'dark' : ''} ${blur ? 'blur' : ''}`} onClick={showDialog}/>
         </div>
     )
 }
