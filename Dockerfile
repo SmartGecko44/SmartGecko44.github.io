@@ -1,5 +1,5 @@
 # Use the Node.js image as builder stage
-FROM node:22 AS builder
+FROM node:18 AS builder
 LABEL authors="gecko"
 WORKDIR /app
 
@@ -26,6 +26,7 @@ COPY webpack.config.js ./
 
 # Build the application
 RUN npm run build
+RUN npm run webpack
 
 # Stage 2: Use Nginx for serving the static files
 FROM nginx:alpine AS runtime
@@ -40,6 +41,10 @@ RUN touch /var/run/nginx.pid
 # Ensure nonroot user has necessary permissions
 RUN chown -R nonroot:nonroot /var/cache/nginx /var/run /var/log/nginx /var/run/nginx.pid /usr/share/nginx/html
 RUN chmod -R 755 /var/cache/nginx /var/run /var/log/nginx /var/run/nginx.pid /usr/share/nginx/html
+
+WORKDIR /usr/share/nginx/html
+
+COPY gxcko.me/dist ./
 
 # Expose port 80 for the web server
 EXPOSE 80
