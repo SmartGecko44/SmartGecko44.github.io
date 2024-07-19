@@ -32,7 +32,6 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({children}) => {
             setCookie('darkMode', theme === 'light', 90)
         } else if (getCookie('cookiesAccepted') && !getCookie('darkMode')) {
             setCookie('darkMode', theme === "light", 90);
-        } else {
         }
     };
 
