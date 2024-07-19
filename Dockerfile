@@ -26,7 +26,6 @@ COPY webpack.config.js ./
 
 # Build the application
 RUN npm run build
-RUN npm run webpack
 
 # Stage 2: Use Nginx for serving the static files
 FROM nginx:alpine AS runtime
