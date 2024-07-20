@@ -22,7 +22,7 @@ jobs:
       - name: Install Node dependencies
         run: npm install --ignore-scripts
 
-      - name: Package using Webpack
+      - name: Build
         run: npm run build
 
       - name: Copy dist files to source
