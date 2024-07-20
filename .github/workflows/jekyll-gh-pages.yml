@@ -37,7 +37,7 @@ jobs:
       - name: Install Node dependencies
         run: npm install --ignore-scripts
 
-      - name: Package using Webpack
+      - name: Build
         env:
           SENTRY_AUTH_WEBPACK: ${{ secrets.SENTRY_AUTH_WEBPACK }}
         run: npm run build
