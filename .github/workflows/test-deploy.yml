@@ -25,6 +25,9 @@ jobs:
       - name: Package using Webpack
         run: npm run build
 
+      - name: Copy dist files to source
+        run: cp -r gxcko.me/dist/index.html gxcko.me/index.html && cp -r gxcko.me/dist/assets gxcko.me/assets
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
