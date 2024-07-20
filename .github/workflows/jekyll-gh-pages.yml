@@ -46,7 +46,7 @@ jobs:
         run: cp -r gxcko.me/dist/index.html gxcko.me/index.html && cp -r gxcko.me/dist/assets gxcko.me/assets
         
       - name: Clean up ./dist
-        run: rmdir gxcko.me/dist/assests && rm gxcko.me/dist/index.html
+        run: rmdir gxcko.me/dist/assets && rm gxcko.me/dist/index.html
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
