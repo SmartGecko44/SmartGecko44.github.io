@@ -100,3 +100,7 @@ $gxcko.me/scripts/google-analytics.js,c/0/c0439a90d80ff833b744fdc178f2c6b9f9126
 ,gxcko.me/src/components/ContentContainer.tsx,8/9/892cd35915ad2d704ebeb6e0ae839c47980469b3
 J
 gxcko.me/src/vite-env.d.ts,6/5/65a371848a91471f76104aed1b983415e0e7e093
+V
+&gxcko.me/src/components/Background.tsx,9/e/9e03bbc2a26711f36db8fc9c4dbab2accc542f54
+\
+,.idea/inspectionProfiles/Project_Default.xml,4/9/496a238a6afa168dbaf6efd37bb459331589579c

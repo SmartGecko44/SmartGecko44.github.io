@@ -1,6 +1,4 @@
 body {
-    background-color: #ffffff;
-    color: #000000;
     font-family: "Aptos", serif;
     transition: all 1s ease-in-out;
 }
@@ -12,6 +10,18 @@ body.dark {
 }
 
 body.inBackground {
+    transition: all 1s ease-in-out;
+}
+
+#background {
+    display: block;
+    position: fixed;
+    left: -50%;
+    top: -50%;
+    z-index: -1;
+    width: 200%;
+    height: 200%;
+    background-color: #222222;
     transition: all 1s ease-in-out;
 }
 
