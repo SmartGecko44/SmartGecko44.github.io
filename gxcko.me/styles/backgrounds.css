@@ -16,11 +16,11 @@ body.inBackground {
 #background {
     display: block;
     position: fixed;
-    left: -50%;
-    top: -50%;
+    left: -1%;
+    top: -1%;
     z-index: -1;
-    width: 200%;
-    height: 200%;
+    width: 101%;
+    height: 101%;
     background-color: #222222;
     transition: all 1s ease-in-out;
 }
