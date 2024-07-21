@@ -2,12 +2,14 @@ import React, {useEffect, useRef} from "react";
 import {useTheme} from "../contexts/ThemeContext.tsx";
 import {checkCookiesAccepted, getCookie, setCookie} from "./CookiePopup.tsx";
 import {useBlur} from "../contexts/BlurContext.tsx";
+import Background from "./Background.tsx";
 
 const DarkModeToggle: React.FC = () => {
     const {theme, toggleTheme} = useTheme();
     const {blur, toggleBlur} = useBlur();
     const dialogRef = useRef<HTMLDialogElement>(null);
     const dialogShown = useRef(false);
+    const dialogOpen = useRef(false);
 
     useEffect(() => {
         if (!getCookie('dialogShown') && !dialogShown.current) {
@@ -21,6 +23,7 @@ const DarkModeToggle: React.FC = () => {
         const dialog = dialogRef.current;
 
         if (dialog) {
+            dialogOpen.current = true;
             if (typeof dialog.showModal === "function") {
                 dialog.showModal();
             } else {
@@ -61,6 +64,7 @@ const DarkModeToggle: React.FC = () => {
                 if (confirmBtn === null) console.warn('Confirm button not found');
                 document.removeEventListener('click', handler);
                 toggleBlur();
+                dialogOpen.current = false;
             }, 1000); // Delay equal to the transition duration
         } else {
             console.warn('Dialog element not found');
@@ -105,6 +109,7 @@ const DarkModeToggle: React.FC = () => {
                     `}
                 </style>
             </noscript>
+            <Background dialogOpen={dialogOpen.current}/>
             <dialog ref={dialogRef} id="darkModeDia" className={theme === 'dark' ? 'dark' : ''}>
                 <p>Would you like to toggle the dark mode?</p>
                 <div className="button-container">
