@@ -46,6 +46,7 @@ export default function CookiePopup() {
     const handleAccept = () => {
         setCookie('cookiesAccepted', true, 90);
         setIsVisible(false);
+        setCookie('darkMode', theme === 'dark', 90);
     };
 
     const handleDecline = () => {

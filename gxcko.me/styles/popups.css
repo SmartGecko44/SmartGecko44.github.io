@@ -8,7 +8,7 @@
     border: 2px solid #333333;
     border-radius: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    z-index: 100;
+    z-index: 3;
     font-family: "Aptos", serif;
     background: linear-gradient(to bottom right, #FF6D6A, #EFBE7D, #E9EC6B, #8BD3E6, #E9CDD0, #B1A2CA);
     opacity: 0;
@@ -53,17 +53,31 @@
     border-radius: 5px;
     font-family: "Aptos", serif;
     cursor: pointer;
-    transition: margin-bottom 0.75s ease-out; /* Add transition */
+    color: white;
+    transition:
+            margin-bottom 0.75s ease-out,
+            background-color 0.5s ease-in-out,
+            border-radius 0.5s ease-in-out; /* Add transition */
+}
+
+#darkModeDia button:hover {
+    border-radius: 20px;
 }
 
 #darkModeDia #confirm {
-    background-color: #4CAF50; /* Green */
-    color: white;
+    background-color: rgb(76, 175, 80); /* Green */
+}
+
+#darkModeDia #confirm:hover {
+    background-color: rgb(76, 150, 80); /* Green */
 }
 
 #darkModeDia #cancel {
-    background-color: #f44336; /* Red */
-    color: white;
+    background-color: rgb(244, 67, 54); /* Red */
+}
+
+#darkModeDia #cancel:hover {
+    background-color: rgb(219, 67, 54); /* Red */
 }
 
 #dark-toggle {
@@ -72,7 +86,7 @@
     width: 100px;
     border-radius: 25%;
     cursor: pointer;
-    z-index: 800;
+    z-index: 2;
     transition: all 1s ease-in-out;
     transform: rotate(180deg);
 }
@@ -123,7 +137,7 @@
     background-color: #f5f5f5;
     border: 1px solid #ddd;
     border-radius: 15px;
-    z-index: 1001;
+    z-index: 10;
     transition:
         all 0.5s ease-in-out,
         right 1s ease-in-out,
@@ -209,7 +223,7 @@
     background: linear-gradient(to bottom right, #FF6D6A, #EFBE7D, #E9EC6B, #8BD3E6, #E9CDD0, #B1A2CA);
     background-size: 200% 200%;
     border-radius: 20px;
-    z-index: 200;
+    z-index: 1;
     transition: all 1s ease-in-out, opacity 1.5s ease-in-out;
     animation: gradient-animation 30s linear infinite;
 }
