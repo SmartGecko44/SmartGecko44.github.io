@@ -40,7 +40,7 @@ const DarkModeToggle: React.FC = () => {
                 console.log('Cookies are not enabled');
             }
         } else {
-            console.warn('Dialog element not found');
+            console.error('Dialog element not found');
             return;
         }
         checkCloseClick();
@@ -61,13 +61,13 @@ const DarkModeToggle: React.FC = () => {
                     dialog.removeAttribute("open");
                     dialog.classList.remove('fallback');
                 }
-                if (confirmBtn === null) console.warn('Confirm button not found');
+                if (confirmBtn === null) console.error('Confirm button not found');
                 document.removeEventListener('click', handler);
                 toggleBlur();
                 dialogOpen.current = false;
             }, 1000); // Delay equal to the transition duration
         } else {
-            console.warn('Dialog element not found');
+            console.error('Dialog element not found');
         }
     }
 
@@ -75,7 +75,7 @@ const DarkModeToggle: React.FC = () => {
         const confirmBtn = document.getElementById('confirm');
 
         if (!confirmBtn) {
-            console.warn('Confirm button found');
+            console.error('Confirm button found');
         }
         document.addEventListener('click', handler);
     }
