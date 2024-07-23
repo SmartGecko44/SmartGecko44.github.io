@@ -75,7 +75,7 @@ const DarkModeToggle: React.FC = () => {
         const confirmBtn = document.getElementById('confirm');
 
         if (!confirmBtn) {
-            console.error('Confirm button found');
+            console.error('Confirm button not found');
         }
         document.addEventListener('click', handler);
     }
