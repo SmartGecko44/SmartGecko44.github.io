@@ -1,4 +1,4 @@
-import {browserTracingIntegration, init} from "@sentry/browser/build/npm/types-ts3.8/index.js";
+import { init, browserTracingIntegration } from "@sentry/browser";
 
 
 window.sentryOnLoad = function () {
