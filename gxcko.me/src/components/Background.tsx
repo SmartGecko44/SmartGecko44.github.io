@@ -4,12 +4,10 @@ interface BackgroundProps {
     dialogOpen: boolean;
 }
 
-export default function Background({ dialogOpen }: BackgroundProps) {
+export default function Background({ dialogOpen }: Readonly<BackgroundProps>) {
     const {theme} = useTheme();
 
-    if (theme === 'light') {
-        return null;
-    } else if (dialogOpen) {
+    if (theme === 'light' || dialogOpen) {
         return null;
     }
 

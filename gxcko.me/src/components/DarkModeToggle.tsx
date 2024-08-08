@@ -1,4 +1,4 @@
-import React, {useEffect, useRef} from "react";
+import React, {useEffect, useRef, useState} from "react";
 import {useTheme} from "../contexts/ThemeContext.tsx";
 import {checkCookiesAccepted, getCookie, setCookie} from "./CookiePopup.tsx";
 import {useBlur} from "../contexts/BlurContext.tsx";
@@ -10,6 +10,10 @@ const DarkModeToggle: React.FC = () => {
     const dialogRef = useRef<HTMLDialogElement>(null);
     const dialogShown = useRef(false);
     const dialogOpen = useRef(false);
+
+    // State to control the visibility of the buttons
+    const [showCancelBtn, setShowCancelBtn] = useState(false);
+    const [showConfirmBtn, setShowConfirmBtn] = useState(false);
 
     useEffect(() => {
         if (!getCookie('dialogShown') && !dialogShown.current) {
@@ -39,6 +43,15 @@ const DarkModeToggle: React.FC = () => {
             } else {
                 console.log('Cookies are not enabled');
             }
+
+            // Set timeouts for button visibility
+            setTimeout(() => {
+                setShowCancelBtn(true);
+            }, 250);
+
+            setTimeout(() => {
+                setShowConfirmBtn(true);
+            }, 500);
         } else {
             console.error('Dialog element not found');
             return;
@@ -47,11 +60,18 @@ const DarkModeToggle: React.FC = () => {
     }
 
     function closeDialog() {
+        console.log('Closing dialog');
         const dialog = dialogRef.current;
         const confirmBtn = document.getElementById('confirm');
 
         if (dialog) {
             dialog.classList.remove('visible');
+            setTimeout(() => {
+                setShowCancelBtn(false);
+                setShowConfirmBtn(false);
+            }, 1000)
+
+
             setTimeout(() => {
                 if (typeof dialog.close === "function") {
                     // Browser supports close, so use it
@@ -98,6 +118,13 @@ const DarkModeToggle: React.FC = () => {
         closeDialog();
     }
 
+    function handleKeyDown(event: React.KeyboardEvent) {
+        if (event.key === 'Enter') {
+            console.log('3');
+            showDialog();
+        }
+    }
+
     return (
         <div id="darkModeMenu">
             <noscript>
@@ -113,12 +140,13 @@ const DarkModeToggle: React.FC = () => {
             <dialog ref={dialogRef} id="darkModeDia" className={theme === 'dark' ? 'dark' : ''}>
                 <p>Would you like to toggle the dark mode?</p>
                 <div className="button-container">
-                    <button id="cancel" onClick={closeDialog}>No</button>
-                    <button id="confirm" onClick={handleConfirm}>Yes</button>
+                    {showCancelBtn && <button id="cancel" onClick={closeDialog} tabIndex={0}>No</button>}
+                    {showConfirmBtn && <button id="confirm" onClick={handleConfirm} tabIndex={0}>Yes</button>}
                 </div>
             </dialog>
             <img id="dark-toggle" src="../../icons/contrast.svg" alt="Dark Mode Icon"
-                 className={`${theme === 'dark' ? 'dark' : ''} ${blur ? 'blur' : ''}`} onClick={showDialog}/>
+                 className={`${theme === 'dark' ? 'dark' : ''} ${blur ? 'blur' : ''}`} onClick={showDialog} tabIndex={dialogOpen.current ? -1 : 0}
+                 role={"button"} onKeyDown={handleKeyDown}/>
         </div>
     )
 }

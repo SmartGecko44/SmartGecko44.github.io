@@ -72,12 +72,20 @@
     background-color: rgb(76, 150, 80); /* Green */
 }
 
+#darkModeDia #confirm:focus {
+    background-color: rgb(70, 135, 80);
+}
+
 #darkModeDia #cancel {
     background-color: rgb(244, 67, 54); /* Red */
 }
 
 #darkModeDia #cancel:hover {
     background-color: rgb(219, 67, 54); /* Red */
+}
+
+#darkModeDia #cancel:focus {
+    background-color: rgb(200, 50, 54);
 }
 
 #dark-toggle {
