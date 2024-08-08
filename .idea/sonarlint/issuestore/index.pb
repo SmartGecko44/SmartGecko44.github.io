@@ -19,3 +19,8 @@ W
 'gxcko.me/src/components/CookiePopup.tsx,9/d/9d51e7bee969a7219ed8fe1b2adb3e2997eba701
 V
 &gxcko.me/src/components/Background.tsx,9/e/9e03bbc2a26711f36db8fc9c4dbab2accc542f54
+:
+
+Dockerfile,6/6/6651ddff6eb82c840ced7c1dddee15c6e1913dd4
+C
+gxcko.me/index.html,b/7/b79f0003805511ae806f7e33f5782062e101d0ca
