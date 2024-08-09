@@ -221,7 +221,7 @@
         transition: flex-direction 0.75s ease-out; /* Add transition */
     }
 
-    #cookiePopup button {
+    #cookiePopup button, #cookiePopup .button-placeholder {
         margin-bottom: 10px;
         transition: margin-bottom 0.75s ease-out; /* Add transition */
     }
