@@ -24,3 +24,5 @@ V
 Dockerfile,6/6/6651ddff6eb82c840ced7c1dddee15c6e1913dd4
 C
 gxcko.me/index.html,b/7/b79f0003805511ae806f7e33f5782062e101d0ca
+S
+#gxcko.me/redirect/genshin-util.html,9/7/97e5aa2277ea4409e286b869db31c0f5222ecc38
