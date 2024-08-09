@@ -11,3 +11,7 @@ window.sentryOnLoad = function () {
         tracePropagationTargets: ['https://gxcko.me'],
     });
 };
+
+window.onload = function () {
+    console.error('Sentry loaded');
+}
