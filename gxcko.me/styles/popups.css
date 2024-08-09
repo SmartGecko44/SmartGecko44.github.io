@@ -44,6 +44,14 @@
     transition: flex-direction 0.75s ease-out; /* Add transition */
 }
 
+/* Placeholder styles */
+.button-placeholder {
+    width: 130px; /* Match the expected width of the buttons */
+    height: 43px; /* Match the expected height of the buttons */
+    display: inline-block; /* Keep them inline */
+    visibility: hidden; /* Keep them invisible until the actual button is shown */
+}
+
 /* Styles for the buttons inside the dialog box */
 #darkModeDia button {
     font-size: 20px;
@@ -72,12 +80,35 @@
     background-color: rgb(76, 150, 80); /* Green */
 }
 
+#darkModeDia #confirm:focus {
+    background-color: rgb(70, 135, 80);
+}
+
 #darkModeDia #cancel {
     background-color: rgb(244, 67, 54); /* Red */
 }
 
 #darkModeDia #cancel:hover {
     background-color: rgb(219, 67, 54); /* Red */
+}
+
+#darkModeDia #cancel:focus {
+    background-color: rgb(200, 50, 54);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.button-appear {
+    animation: fadeIn 1.5s ease forwards;
 }
 
 #dark-toggle {

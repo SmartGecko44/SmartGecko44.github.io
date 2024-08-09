@@ -13,7 +13,7 @@ export default function ContentContainer() {
             <div id="link" className={theme === 'dark' ? 'dark' : ''}>
                 <a href="../../redirect/youtube.html"
                    className={`bubble ${theme === 'dark' ? 'dark' : ''}`} target="_blank"
-                   rel="noopener noreferrer">Check out
+                   rel="noopener noreferrer" tabIndex={0}>Check out
                     my YouTube</a>
                 <br/>
                 <br/>
@@ -21,7 +21,7 @@ export default function ContentContainer() {
                 <br/>
                 <a href="../../redirect/twitter.html"
                    className={`bubble ${theme === 'dark' ? 'dark' : ''}`} target="_blank"
-                   rel="noopener noreferrer">Check out
+                   rel="noopener noreferrer" tabIndex={0}>Check out
                     my Twitter</a>
                 <br/>
                 <br/>
@@ -29,7 +29,7 @@ export default function ContentContainer() {
                 <br/>
                 <a href="../../redirect/github.html"
                    className={`bubble ${theme === 'dark' ? 'dark' : ''}`} target="_blank"
-                   rel="noopener noreferrer">Check out
+                   rel="noopener noreferrer" tabIndex={0}>Check out
                     my GitHub</a>
                 <br/>
                 <div className="half-br"></div>
@@ -37,7 +37,7 @@ export default function ContentContainer() {
                 <br/>
                 <a href="../../redirect/github-repo.html"
                    className={`bubble ${theme === 'dark' ? 'dark' : ''}`} target="_blank"
-                   rel="noopener noreferrer">View
+                   rel="noopener noreferrer" tabIndex={0}>View
                     the repo for this website</a>
             </div>
         </div>

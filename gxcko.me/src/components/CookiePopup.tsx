@@ -59,8 +59,8 @@ export default function CookiePopup() {
                  className={`${isVisible ? 'show' : 'hide'} ${theme === 'dark' ? 'dark' : ''} ${blur ? 'blur' : ''}`}>
                 <p>This website uses cookies</p>
                 <div className="button-container">
-                    <button id="decline" onClick={handleDecline}>Decline</button>
-                    <button id="accept" onClick={handleAccept}>Accept</button>
+                    <button id="decline" onClick={handleDecline} tabIndex={0}>Decline</button>
+                    <button id="accept" onClick={handleAccept} tabIndex={0}>Accept</button>
                 </div>
             </div>
         )
