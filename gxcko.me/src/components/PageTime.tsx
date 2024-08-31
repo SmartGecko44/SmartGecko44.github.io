@@ -22,6 +22,7 @@ export default function PageTime() {
     return (
         <div id="pageTime" className={blur ? 'blur' : ""}>
             <p>Time wasted on this page: {secondsToString(seconds)}</p>
+            {seconds > 3600 ? <p>Why are you still here?</p> : ""}
         </div>
     )
 }
