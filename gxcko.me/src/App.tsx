@@ -4,6 +4,7 @@ import {ThemeProvider} from "./contexts/ThemeContext.tsx";
 import BottomBanner from "./components/BottomBanner.tsx";
 import {BlurProvider} from "./contexts/BlurContext.tsx";
 import ContentContainer from "./components/ContentContainer.tsx";
+import PageTime from "./components/PageTime.tsx";
 
 export default function App() {
     return (
@@ -14,6 +15,7 @@ export default function App() {
                     <ContentContainer/>
                     <CookiePopup/>
                     <BottomBanner/>
+                    <PageTime/>
                 </div>
             </BlurProvider>
         </ThemeProvider>
