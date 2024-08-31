@@ -48,6 +48,10 @@ jobs:
       - name: Clean up ./dist
         run: rm -r gxcko.me/dist/assets && rm gxcko.me/dist/index.html
 
+      # Ensure no test files are included in the source directory
+      - name: Remove Test Files
+        run: find gxcko.me -type f -name '*.test.*' -delete && find gxcko.me -type d -name '__tests__' -exec rm -r {} +
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
