@@ -104,3 +104,7 @@ V
 &gxcko.me/src/components/Background.tsx,9/e/9e03bbc2a26711f36db8fc9c4dbab2accc542f54
 \
 ,.idea/inspectionProfiles/Project_Default.xml,4/9/496a238a6afa168dbaf6efd37bb459331589579c
+T
+$gxcko.me/src/components/PageTime.tsx,b/6/b6a98121df0c48870d5b7c885e9c7a25a427d037
+S
+#.idea/sonarlint/issuestore/index.pb,9/f/9fe84ebb15faf917b7def6236dba604453cc61e0

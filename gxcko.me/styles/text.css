@@ -35,3 +35,17 @@
 .half-br {
     margin-top: 0.5em;
 }
+
+#pageTime {
+    text-align: right;
+    font-size: x-large;
+    position: fixed;
+    bottom: 0;
+    right: 1%;
+    transition: all 1s ease-in-out,
+        color 0s;
+}
+
+#pageTime.blur {
+    filter: blur(5px);
+}
