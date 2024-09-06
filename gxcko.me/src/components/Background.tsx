@@ -12,6 +12,6 @@ export default function Background({ dialogOpen }: Readonly<BackgroundProps>) {
     }
 
     return (
-        <div id="background"></div>
+        <div data-testit="background" id="background"></div>
     );
 }

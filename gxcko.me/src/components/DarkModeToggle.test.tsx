@@ -1,21 +1,8 @@
 // Helper function to render component with context providers
 import {describe} from "vitest";
-import {MockBlurProvider} from "../../testHelpers/mocks/MockBlurProvider.tsx";
-import {MockThemeProvider} from "../../testHelpers/mocks/MockThemeProvider.tsx";
-import {fireEvent, render, screen, waitFor} from "@testing-library/react";
+import {fireEvent, screen, waitFor} from "@testing-library/react";
 import DarkModeToggle from "./DarkModeToggle.tsx";
-import React from "react";
-
-// Helper function to render component with context providers
-const renderWithProviders = (children: React.ReactElement, theme: 'light' | 'dark' = 'light', blur: boolean = false) => {
-    return render(
-        <MockThemeProvider theme={theme}>
-            <MockBlurProvider blur={blur}>
-                {children}
-            </MockBlurProvider>
-        </MockThemeProvider>
-    );
-};
+import {renderWithProviders} from "../../testHelpers/functions/renderWithProviders.tsx";
 
 describe('DarkModeToggle Component', () => {
     it('should be displayed', () => {
@@ -63,4 +50,6 @@ describe('DarkModeToggle Component', () => {
             expect(screen.queryByRole('dialog')).not.toBeInTheDocument()
         })
     });
-})
+
+    //TODO: Theme tests
+});

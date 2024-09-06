@@ -76,3 +76,7 @@ H
 sonar-project.properties,2/5/2538046035efb77ecc44e1fd2eec1e2641594d4c
 _
 /gxcko.me/src/components/DarkModeToggle.test.tsx,5/6/56bd0d295e376a1d297a0a82b7e1c6541c4f3c74
+[
++gxcko.me/src/components/Background.test.tsx,0/8/08246f9a79d8131946d583e57c16b53dff695ff4
+f
+6gxcko.me/testHelpers/functions/renderWithProviders.tsx,9/4/948c5cf4c5adfed758436bfd589b019a12fa12f7

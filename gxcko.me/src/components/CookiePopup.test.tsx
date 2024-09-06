@@ -1,20 +1,7 @@
 import {describe, expect} from "vitest";
-import {fireEvent, render, screen} from "@testing-library/react";
+import {fireEvent, screen} from "@testing-library/react";
 import CookiePopup from "./CookiePopup.tsx";
-import React from "react";
-import {MockBlurProvider} from "../../testHelpers/mocks/MockBlurProvider.tsx";
-import {MockThemeProvider} from "../../testHelpers/mocks/MockThemeProvider.tsx";
-
-// Helper function to render component with context providers
-const renderWithProviders = (children: React.ReactElement, theme: 'light' | 'dark' = 'light', blur: boolean = false) => {
-    return render(
-        <MockThemeProvider theme={theme}>
-            <MockBlurProvider blur={blur}>
-                {children}
-            </MockBlurProvider>
-        </MockThemeProvider>
-    );
-};
+import {renderWithProviders} from "../../testHelpers/functions/renderWithProviders.tsx";
 
 describe('CookiePopup Component', () => {
     beforeEach(() => {
@@ -49,4 +36,6 @@ describe('CookiePopup Component', () => {
         // expect cookie popup to have hide class
         expect(screen.getByTestId('cookiePopup')).toHaveClass('hide');
     });
+
+    //TODO: Theme tests
 });
