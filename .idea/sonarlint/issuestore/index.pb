@@ -62,3 +62,5 @@ _
 /gxcko.me/testHelpers/mocks/MockBlurProvider.tsx,0/9/09eb058e42eb326a4e1379cb74c895dc6631e4e4
 A
 package-lock.json,f/a/fa288d1472d29beccb489a676f68739ad365fc47
+\
+,gxcko.me/src/components/CookiePopup.test.tsx,7/0/70841626b71d977f8bbdb8eff87d24accae222c3

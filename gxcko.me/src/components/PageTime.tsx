@@ -15,7 +15,6 @@ export default function PageTime() {
         const hours = Math.floor(seconds / 3600);
         const minutes = Math.floor(seconds % 3600 / 60);
         const secondsString = Math.floor(seconds % 3600 % 60);
-        console.log(hours + "h" + minutes + "m" + secondsString + "s");
         return `${hours === 0 ? "" : hours < 10 ? "0" + hours + "h" + ":" : hours + "h" + ":"}${minutes === 0 && hours === 0 ? "" : minutes < 10 ? "0" + minutes + "m" + ":" : minutes + "m" + ":"}${secondsString === 0 && minutes === 0 && hours === 0 ? "" : secondsString < 10 ? "0" + secondsString + "s" : secondsString + "s"}`;
     }
 

@@ -116,3 +116,5 @@ S
 0gxcko.me/testHelpers/mocks/MockThemeProvider.tsx,b/3/b394a8bd871183f12f951219a5e2975ab2989de7
 _
 /gxcko.me/testHelpers/mocks/MockBlurProvider.tsx,0/9/09eb058e42eb326a4e1379cb74c895dc6631e4e4
+\
+,gxcko.me/src/components/CookiePopup.test.tsx,7/0/70841626b71d977f8bbdb8eff87d24accae222c3

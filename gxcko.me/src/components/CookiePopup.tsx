@@ -55,7 +55,7 @@ export default function CookiePopup() {
 
     if (!getCookie('cookiesAccepted')) {
         return (
-            <div id="cookiePopup"
+            <div data-testid="cookiePopup" id="cookiePopup"
                  className={`${isVisible ? 'show' : 'hide'} ${theme === 'dark' ? 'dark' : ''} ${blur ? 'blur' : ''}`}>
                 <p>This website uses cookies</p>
                 <div className="button-container">
