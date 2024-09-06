@@ -74,11 +74,5 @@ P
  .github/workflows/sonarcloud.yml,0/7/077a84aad902191fd63fd374880221279f02a65d
 H
 sonar-project.properties,2/5/2538046035efb77ecc44e1fd2eec1e2641594d4c
-@
-vitest.config.ts,e/7/e7b129ed54e5f3a6ad2701ad98fb309f9bd2a773
-M
-coverage/.tmp/coverage-0.json,0/2/02c72bf073822cfd5b907d3a83e7ee1b2981b22f
-U
-%gxcko.me/coverage/coverage-final.json,a/b/abe2f18c51bc48da4005925966030068800a7416
-L
-gxcko.me/coverage/index.html,f/a/fa46b17028ba04f37b62b8ca52bcfcb0214bcaf8
+_
+/gxcko.me/src/components/DarkModeToggle.test.tsx,5/6/56bd0d295e376a1d297a0a82b7e1c6541c4f3c74

@@ -120,7 +120,7 @@ const DarkModeToggle: React.FC = () => {
     }
 
     return (
-        <div id="darkModeMenu">
+        <div data-testid="darkModeMenuFull" id="darkModeMenu">
             <noscript>
                 <style>
                     {`
@@ -134,15 +134,15 @@ const DarkModeToggle: React.FC = () => {
             <dialog ref={dialogRef} id="darkModeDia" className={theme === 'dark' ? 'dark' : ''}>
                 <p>Would you like to toggle the dark mode?</p>
                 <div className="button-container">
-                    {!showCancelBtn && <div className={"button-placeholder"}/>}
+                    {!showCancelBtn && <div data-testid="cancelButtonPlaceholder" className={"button-placeholder"}/>}
                     {showCancelBtn &&
-                        <button id="cancel" onClick={closeDialog} tabIndex={0} className="button-appear">No</button>}
+                        <button data-testid="cancelButton" id="cancel" onClick={closeDialog} tabIndex={0} className="button-appear">No</button>}
                     {!showConfirmBtn && <div className={"button-placeholder"}/>}
                     {showConfirmBtn && <button id="confirm" onClick={handleConfirm} tabIndex={0}
                                                className="button-appear">Yes</button>}
                 </div>
             </dialog>
-            <img id="dark-toggle" src="../../icons/contrast.svg" alt="Dark Mode Icon"
+            <img data-testid="darkToggleImage" id="dark-toggle" src="../../icons/contrast.svg" alt="Dark Mode Icon"
                  className={`${theme === 'dark' ? 'dark' : ''} ${blur ? 'blur' : ''}`} onClick={showDialog}
                  tabIndex={dialogOpen.current ? -1 : 0}
                  role={"button"} onKeyDown={handleKeyDown}/>

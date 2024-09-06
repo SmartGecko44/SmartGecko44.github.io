@@ -33,4 +33,19 @@ describe('BottomBanner Component', () => {
     });
 
     //TODO: Add working support for contexts
+
+    it('should apply dark theme class when theme is dark', () => {
+        renderWithProviders(<BottomBanner />, 'dark');
+        expect(screen.getByTestId('bottomBanner')).toHaveClass('dark');
+    })
+
+    it('should apply blur class when blur is true', () => {
+        renderWithProviders(<BottomBanner />, 'light', true);
+        expect(screen.getByTestId('bottomBanner')).toHaveClass('blur');
+    })
+
+    it('should apply blur and dark when both are true', () => {
+        renderWithProviders(<BottomBanner />, 'dark', true);
+        expect(screen.getByTestId('bottomBanner')).toHaveClass('blur dark');
+    });
 });
