@@ -8,6 +8,8 @@
     "build": "tsc -b && vite build && webpack",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
+    "test": "vitest",
+    "test:ui": "vitest --ui"
   },
   "dependencies": {
     "@sentry/browser": "^8.19.0",
