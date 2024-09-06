@@ -108,3 +108,29 @@ T
 $gxcko.me/src/components/PageTime.tsx,b/6/b6a98121df0c48870d5b7c885e9c7a25a427d037
 S
 #.idea/sonarlint/issuestore/index.pb,9/f/9fe84ebb15faf917b7def6236dba604453cc61e0
+]
+-gxcko.me/src/components/BottomBanner.test.tsx,1/9/19e513a755633e9936a6ab4c56b4d2d2028d6e10
+?
+vitest.setup.ts,6/3/63184d779034a789c8003d638d69eea0b460b8fe
+`
+0gxcko.me/testHelpers/mocks/MockThemeProvider.tsx,b/3/b394a8bd871183f12f951219a5e2975ab2989de7
+_
+/gxcko.me/testHelpers/mocks/MockBlurProvider.tsx,0/9/09eb058e42eb326a4e1379cb74c895dc6631e4e4
+\
+,gxcko.me/src/components/CookiePopup.test.tsx,7/0/70841626b71d977f8bbdb8eff87d24accae222c3
+Y
+)gxcko.me/src/components/PageTime.test.tsx,6/5/6530d1fa1ec3d376b46bfdf3b2d7c341d78cda97
+P
+ .github/workflows/unit-tests.yml,7/c/7c1ebe7e9d5b2ea878c5ab9f395ac4154b556aaa
+P
+ .github/workflows/sonarcloud.yml,0/7/077a84aad902191fd63fd374880221279f02a65d
+H
+sonar-project.properties,2/5/2538046035efb77ecc44e1fd2eec1e2641594d4c
+@
+vitest.config.ts,e/7/e7b129ed54e5f3a6ad2701ad98fb309f9bd2a773
+M
+coverage/.tmp/coverage-0.json,0/2/02c72bf073822cfd5b907d3a83e7ee1b2981b22f
+U
+%gxcko.me/coverage/coverage-final.json,a/b/abe2f18c51bc48da4005925966030068800a7416
+L
+gxcko.me/coverage/index.html,f/a/fa46b17028ba04f37b62b8ca52bcfcb0214bcaf8

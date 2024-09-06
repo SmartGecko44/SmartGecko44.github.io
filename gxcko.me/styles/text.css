@@ -40,7 +40,7 @@
     text-align: right;
     font-size: x-large;
     position: fixed;
-    bottom: 0;
+    bottom: 2%;
     right: 1%;
     transition: all 1s ease-in-out,
         color 0s;

@@ -5,7 +5,7 @@ type BlurContextType = {
     toggleBlur: () => void;
 };
 
-const BlurContext = createContext<BlurContextType | undefined>(undefined);
+export const BlurContext = createContext<BlurContextType | undefined>(undefined);
 
 interface BlurProviderProps {
     children: ReactNode;

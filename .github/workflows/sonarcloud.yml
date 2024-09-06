@@ -1,0 +1,32 @@
+name: Scan with SonarCloud
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  sonarcloud:
+    name: SonarCloud
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
+
+      # Install dependencies (including Vitest)
+      - name: Install dependencies
+        run: npm install
+
+      # Run Vitest for coverage, ignore test failures
+      - name: Run Vitest for coverage
+        run: |
+          npm run test:cov || true
+
+      # SonarCloud Scan
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
