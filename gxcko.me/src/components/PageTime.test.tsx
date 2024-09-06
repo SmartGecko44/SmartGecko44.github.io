@@ -2,6 +2,7 @@ import { render, screen, act } from '@testing-library/react';
 import { describe, it, expect, vi } from 'vitest';
 import PageTime from './PageTime';
 import { MockBlurProvider } from '../../testHelpers/mocks/MockBlurProvider';
+import React from "react";
 
 // Helper function to render component with context providers
 const renderWithProviders = (children: React.ReactElement, blur: boolean = false) => {

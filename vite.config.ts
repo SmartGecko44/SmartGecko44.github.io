@@ -18,7 +18,7 @@ export default defineConfig({
     environment: 'jsdom',  // Use jsdom to simulate a browser environment for React testHelpers
     setupFiles: './vitest.setup.ts',  // Optional: add any setup you need before testHelpers
     coverage: {
-      reporter: ['text', 'json', 'html'],  // Generate test coverage reports in different formats
+      reporter: ['lcov'],  // Generate test coverage reports in different formats
     },
   },
 })

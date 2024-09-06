@@ -3,6 +3,7 @@ import { describe, it, expect } from 'vitest';
 import BottomBanner from './BottomBanner';
 import { MockThemeProvider } from '../../testHelpers/mocks/MockThemeProvider'; // Import the mock provider
 import { MockBlurProvider } from '../../testHelpers/mocks/MockBlurProvider'; // Import the mock provider
+import React from "react";
 
 // Helper function to render component with context providers
 const renderWithProviders = (children: React.ReactElement, theme: 'light' | 'dark' = 'light', blur: boolean = false) => {
