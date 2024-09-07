@@ -38,9 +38,20 @@ describe('ContentContainer Component Functionality', () => {
 });
 
 describe('ContentContainer Component Styling', () => {
+    it('should start with light mode and not have blur', () => {
+        renderWithProviders(<ContentContainer />);
+        expect(screen.getByTestId('contentContainer')).not.toHaveClass('dark');
+        expect(screen.getByTestId('contentContainer')).not.toHaveClass('blur');
+    });
+
     it('should apply dark mode', () => {
         renderWithProviders(<ContentContainer />, 'dark');
         expect(screen.getByTestId('contentContainer')).toHaveClass('dark');
+    });
+
+    it('should apply blur', () => {
+        renderWithProviders(<ContentContainer />, 'light', true);
+        expect(screen.getByTestId('contentContainer')).toHaveClass('blur');
     });
 });
 
@@ -50,6 +61,14 @@ describe('ContentBubble Styling', () => {
         const bubbles = document.getElementsByClassName('bubble');
         for (let i = 0; i < bubbles.length; i++) {
             expect(bubbles[i]).toHaveClass('dark');
+        }
+    });
+
+    it('should apply light mode', () => {
+        renderWithProviders(<ContentContainer />, 'light');
+        const bubbles = document.getElementsByClassName('bubble');
+        for (let i = 0; i < bubbles.length; i++) {
+            expect(bubbles[i]).not.toHaveClass('dark');
         }
     });
 });

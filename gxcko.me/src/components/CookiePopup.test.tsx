@@ -39,9 +39,10 @@ describe('CookiePopup Component Functionality', () => {
 });
 
 describe('CookiePopup Component Styling', () => {
-    it('should apply light theme class when theme is light', () => {
+    it('should start with light mode and not have blur', () => {
         renderWithProviders(<CookiePopup />, 'light');
         expect(screen.getByTestId('cookiePopup')).not.toHaveClass('dark');
+        expect(screen.getByTestId('cookiePopup')).not.toHaveClass('blur');
     });
 
     it('should apply dark theme class when theme is dark', () => {

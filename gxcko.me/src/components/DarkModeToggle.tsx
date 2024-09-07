@@ -110,6 +110,7 @@ const DarkModeToggle: React.FC = () => {
     function handleConfirm() {
         toggleTheme();
         closeDialog();
+        console.log('Toggled')
     }
 
     function handleKeyDown(event: React.KeyboardEvent) {
@@ -118,6 +119,8 @@ const DarkModeToggle: React.FC = () => {
             showDialog();
         }
     }
+
+    console.log(theme);
 
     return (
         <div data-testid="darkModeMenuFull" id="darkModeMenu">
@@ -138,7 +141,7 @@ const DarkModeToggle: React.FC = () => {
                     {showCancelBtn &&
                         <button data-testid="cancelButton" id="cancel" onClick={closeDialog} tabIndex={0} className="button-appear">No</button>}
                     {!showConfirmBtn && <div className={"button-placeholder"}/>}
-                    {showConfirmBtn && <button id="confirm" onClick={handleConfirm} tabIndex={0}
+                    {showConfirmBtn && <button data-testid="confirmButton" id="confirm" onClick={handleConfirm} tabIndex={0}
                                                className="button-appear">Yes</button>}
                 </div>
             </dialog>

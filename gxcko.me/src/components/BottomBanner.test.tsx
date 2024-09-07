@@ -11,9 +11,10 @@ describe('BottomBanner Component Functionality', () => {
 });
 
 describe('BottomBanner Component Styling', () => {
-    it('should not apply dark theme class when theme is light', () => {
+    it('should start with light mode and not have blur', () => {
         renderWithProviders(<BottomBanner />, 'light');
         expect(screen.getByText('© 2024 Gecko!')).not.toHaveClass('dark');
+        expect(screen.getByText('© 2024 Gecko!')).not.toHaveClass('blur');
     });
 
     it('should not apply blur class when blur is false', () => {
