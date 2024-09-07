@@ -3,12 +3,14 @@ import { describe, it, expect } from 'vitest';
 import BottomBanner from './BottomBanner';
 import {renderWithProviders} from "../../testHelpers/functions/renderWithProviders.tsx";
 
-describe('BottomBanner Component', () => {
+describe('BottomBanner Component Functionality', () => {
     it('should render without crashing', () => {
         renderWithProviders(<BottomBanner />);
         expect(screen.getByText('© 2024 Gecko!')).toBeInTheDocument();
     });
+});
 
+describe('BottomBanner Component Styling', () => {
     it('should not apply dark theme class when theme is light', () => {
         renderWithProviders(<BottomBanner />, 'light');
         expect(screen.getByText('© 2024 Gecko!')).not.toHaveClass('dark');

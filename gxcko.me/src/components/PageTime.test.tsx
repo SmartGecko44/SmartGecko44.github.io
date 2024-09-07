@@ -3,7 +3,7 @@ import { describe, it, expect, vi } from 'vitest';
 import PageTime from './PageTime';
 import {renderWithProviders} from "../../testHelpers/functions/renderWithProviders.tsx";
 
-describe('PageTime Component', () => {
+describe('PageTime Component Functionality', () => {
     beforeEach(() => {
         vi.useFakeTimers();
     });
@@ -33,6 +33,4 @@ describe('PageTime Component', () => {
         });
         expect(screen.getByText('Why are you still here?')).toBeInTheDocument();
     });
-
-    //TODO: Theme tests
 });

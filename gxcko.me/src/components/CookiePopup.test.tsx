@@ -3,7 +3,7 @@ import {fireEvent, screen} from "@testing-library/react";
 import CookiePopup from "./CookiePopup.tsx";
 import {renderWithProviders} from "../../testHelpers/functions/renderWithProviders.tsx";
 
-describe('CookiePopup Component', () => {
+describe('CookiePopup Component Functionality', () => {
     beforeEach(() => {
         // Clear cookies
         document.cookie.split(';').forEach((c) => {
@@ -36,6 +36,26 @@ describe('CookiePopup Component', () => {
         // expect cookie popup to have hide class
         expect(screen.getByTestId('cookiePopup')).toHaveClass('hide');
     });
+});
 
-    //TODO: Theme tests
+describe('CookiePopup Component Styling', () => {
+    it('should apply light theme class when theme is light', () => {
+        renderWithProviders(<CookiePopup />, 'light');
+        expect(screen.getByTestId('cookiePopup')).not.toHaveClass('dark');
+    });
+
+    it('should apply dark theme class when theme is dark', () => {
+        renderWithProviders(<CookiePopup />, 'dark');
+        expect(screen.getByTestId('cookiePopup')).toHaveClass('dark');
+    });
+
+    it('should apply blur class when blur is true', () => {
+        renderWithProviders(<CookiePopup />, 'light', true);
+        expect(screen.getByTestId('cookiePopup')).toHaveClass('blur');
+    });
+
+    it('should not apply blur class when blur is false', () => {
+        renderWithProviders(<CookiePopup />, 'light', false);
+        expect(screen.getByTestId('cookiePopup')).not.toHaveClass('blur');
+    });
 });

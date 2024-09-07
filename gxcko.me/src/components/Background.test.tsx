@@ -2,7 +2,7 @@ import {describe} from "vitest";
 import {renderWithProviders} from "../../testHelpers/functions/renderWithProviders.tsx";
 import Background from "./Background.tsx";
 
-describe('Background Component', () => {
+describe('Background Component Functionality', () => {
     it('should not render in light mode', () => {
         renderWithProviders(<Background dialogOpen={false} />, 'light');
         expect(document.getElementById('background')).not.toBeInTheDocument();

@@ -6,7 +6,7 @@ export default function ContentContainer() {
     const {blur} = useBlur()
 
     return (
-        <div id="content-container" className={`${theme === 'dark' ? 'dark' : ''} ${blur ? 'blur' : ''}`}>
+        <div data-testid="contentContainer" id="content-container" className={`${theme === 'dark' ? 'dark' : ''} ${blur ? 'blur' : ''}`}>
             <h1 id="title">Hai! Welcome to my about me page! (WIP)</h1>
             <br/>
             <br/>
