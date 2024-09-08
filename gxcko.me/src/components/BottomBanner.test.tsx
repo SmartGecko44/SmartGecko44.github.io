@@ -37,3 +37,53 @@ describe('BottomBanner Component Styling', () => {
         expect(screen.getByTestId('bottomBanner')).toHaveClass('blur dark');
     });
 });
+
+describe('BottomBanner Development Artefacts', () => {
+    it('should not send anything in the console when theme is light', () => {
+        const consoleLogSpy = vi.spyOn(console, 'log');
+
+        renderWithProviders(<BottomBanner />, 'light');
+
+        expect(consoleLogSpy).not.toHaveBeenCalled();
+    });
+
+    it('should not send a message in the console when theme is dark', () => {
+        const consoleLogSpy = vi.spyOn(console, 'log');
+
+        renderWithProviders(<BottomBanner />, 'dark');
+
+        expect(consoleLogSpy).not.toHaveBeenCalled();
+    });
+
+    it('should not send anything in the console when blur is false', () => {
+        const consoleLogSpy = vi.spyOn(console, 'log');
+
+        renderWithProviders(<BottomBanner />, 'light', false);
+
+        expect(consoleLogSpy).not.toHaveBeenCalled();
+    });
+
+    it('should not send a message in the console when blur is true', () => {
+        const consoleLogSpy = vi.spyOn(console, 'log');
+
+        renderWithProviders(<BottomBanner />, 'light', true);
+
+        expect(consoleLogSpy).not.toHaveBeenCalled();
+    });
+
+    it('should not send anything in the console when blur and theme are false', () => {
+        const consoleLogSpy = vi.spyOn(console, 'log');
+
+        renderWithProviders(<BottomBanner />, 'light', false);
+
+        expect(consoleLogSpy).not.toHaveBeenCalled();
+    });
+
+    it('should not send a message in the console when blur is false and theme is dark', () => {
+        const consoleLogSpy = vi.spyOn(console, 'log');
+
+        renderWithProviders(<BottomBanner />, 'dark', true);
+
+        expect(consoleLogSpy).not.toHaveBeenCalled();
+    });
+});

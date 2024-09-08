@@ -72,3 +72,37 @@ describe('ContentBubble Styling', () => {
         }
     });
 });
+
+describe('ContentContainer Development Artefacts', () => {
+    it('should not send anything in the console when theme is light', () => {
+        const consoleLogSpy = vi.spyOn(console, 'log');
+
+        renderWithProviders(<ContentContainer />, 'light');
+
+        expect(consoleLogSpy).not.toHaveBeenCalled();
+    });
+
+    it('should not send a message in the console when theme is dark', () => {
+        const consoleLogSpy = vi.spyOn(console, 'log');
+
+        renderWithProviders(<ContentContainer />, 'dark');
+
+        expect(consoleLogSpy).not.toHaveBeenCalled();
+    });
+
+    it('should not send anything in the console when blur is false', () => {
+        const consoleLogSpy = vi.spyOn(console, 'log');
+
+        renderWithProviders(<ContentContainer />, 'light', false);
+
+        expect(consoleLogSpy).not.toHaveBeenCalled();
+    });
+
+    it('should not send a message in the console when blur is true', () => {
+        const consoleLogSpy = vi.spyOn(console, 'log');
+
+        renderWithProviders(<ContentContainer />, 'light', true);
+
+        expect(consoleLogSpy).not.toHaveBeenCalled();
+    });
+});

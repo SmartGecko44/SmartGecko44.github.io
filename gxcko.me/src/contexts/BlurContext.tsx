@@ -16,7 +16,6 @@ export const BlurProvider: React.FC<BlurProviderProps> = ({ children }) => {
 
     const toggleBlur = () => {
         setBlur(prevBlur => !prevBlur);
-        console.log('Toggled blur');
     };
 
     return (

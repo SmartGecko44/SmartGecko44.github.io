@@ -50,3 +50,19 @@ describe('ThemeContext', () => {
         console.error = consoleError;
     });
 });
+
+describe('ThemeContext Development Artefacts', () => {
+    it('should not send anything in the console when theme is toggled', () => {
+        const consoleLogSpy = vi.spyOn(console, 'log');
+
+        render(
+            <ThemeProvider>
+                <TestComponent />
+            </ThemeProvider>
+        );
+
+        fireEvent.click(screen.getByText('Toggle Theme'));
+
+        expect(consoleLogSpy).not.toHaveBeenCalled();
+    });
+});

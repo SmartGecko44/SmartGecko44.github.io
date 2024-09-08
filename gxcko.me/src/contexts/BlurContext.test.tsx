@@ -50,3 +50,19 @@ describe('BlurContext', () => {
         console.error = consoleError;
     });
 });
+
+describe('BlurContext Development Artefacts', () => {
+    it('should not send anything in the console when blur is toggled', () => {
+        const consoleLogSpy = vi.spyOn(console, 'log');
+
+        render(
+            <BlurProvider>
+                <TestComponent />
+            </BlurProvider>
+        );
+
+        fireEvent.click(screen.getByText('Toggle Blur'));
+
+        expect(consoleLogSpy).not.toHaveBeenCalled();
+    });
+});

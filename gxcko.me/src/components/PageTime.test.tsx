@@ -34,3 +34,13 @@ describe('PageTime Component Functionality', () => {
         expect(screen.getByText('Why are you still here?')).toBeInTheDocument();
     });
 });
+
+describe('PageTime Development Artefacts', () => {
+    it('should not send anything in the console', () => {
+        const consoleLogSpy = vi.spyOn(console, 'log');
+
+        renderWithProviders(<PageTime />);
+
+        expect(consoleLogSpy).not.toHaveBeenCalled();
+    });
+})

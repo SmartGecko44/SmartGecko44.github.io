@@ -1,5 +1,5 @@
 // Helper function to render component with context providers
-import {describe} from "vitest";
+import {describe, vi} from "vitest";
 import {fireEvent, screen, waitFor} from "@testing-library/react";
 import DarkModeToggle from "./DarkModeToggle.tsx";
 import {renderWithProviders} from "../../testHelpers/functions/renderWithProviders.tsx";
@@ -49,7 +49,7 @@ describe('DarkModeToggle Component Functionality', () => {
         })
     });
 
-    it.skip('should close the dialogue on background click', async () => {
+    it('should close the dialogue on background click', async () => {
         renderWithProviders(<DarkModeToggle/>);
         fireEvent.click(screen.getByTestId('darkToggleImage'));
 
@@ -58,7 +58,7 @@ describe('DarkModeToggle Component Functionality', () => {
             expect(screen.getByTestId('cancelButton')).toBeInTheDocument()
         })
 
-        fireEvent.mouseDown(document);
+        fireEvent.click(document);
 
         // Wait for the dialog to disappear
         await waitFor(() => {
@@ -122,3 +122,21 @@ describe('darkDialog Component Styling', () => {
         expect(screen.getByTestId('darkDialog')).not.toHaveClass('blur')
     });
 });
+
+describe('darkModeToggle Development Artefacts', () => {
+    it('should not send anything in the console', async () => {
+        const consoleLogSpy = vi.spyOn(console, 'log');
+
+        renderWithProviders(<DarkModeToggle/>)
+        expect(screen.getByTestId('darkToggleImage')).not.toHaveClass('dark')
+        fireEvent.click(screen.getByTestId('darkToggleImage'))
+
+        await waitFor(() => {
+            expect(screen.getByTestId('confirmButton')).toBeInTheDocument()
+        })
+
+        fireEvent.click(screen.getByTestId('confirmButton'))
+
+        expect(consoleLogSpy).not.toHaveBeenCalled();
+    });
+})

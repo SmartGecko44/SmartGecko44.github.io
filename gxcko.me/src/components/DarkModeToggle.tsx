@@ -24,7 +24,6 @@ const DarkModeToggle: React.FC = () => {
 
     // Function to show the dialog box
     function showDialog() {
-        console.log('Showing dialog');
         const dialog = dialogRef.current;
 
         if (dialog) {
@@ -41,8 +40,6 @@ const DarkModeToggle: React.FC = () => {
             toggleBlur();
             if (checkCookiesAccepted()) {
                 setCookie('dialogShown', true, 30);
-            } else {
-                console.log('Cookies are not enabled');
             }
 
             // Set timeouts for button visibility
@@ -61,7 +58,6 @@ const DarkModeToggle: React.FC = () => {
     }
 
     function closeDialog() {
-        console.log('Closing dialog');
         const dialog = dialogRef.current;
 
         if (dialog) {
@@ -110,17 +106,13 @@ const DarkModeToggle: React.FC = () => {
     function handleConfirm() {
         toggleTheme();
         closeDialog();
-        console.log('Toggled')
     }
 
     function handleKeyDown(event: React.KeyboardEvent) {
         if (event.key === 'Enter') {
-            console.log('3');
             showDialog();
         }
     }
-
-    console.log(theme);
 
     return (
         <div data-testid="darkModeMenuFull" id="darkModeMenu">
