@@ -1,28 +1,11 @@
 import {describe, expect} from "vitest";
-import {fireEvent, render, screen} from "@testing-library/react";
+import {fireEvent, screen} from "@testing-library/react";
 import CookiePopup from "./CookiePopup.tsx";
-import React from "react";
-import {MockBlurProvider} from "../../testHelpers/mocks/MockBlurProvider.tsx";
-import {MockThemeProvider} from "../../testHelpers/mocks/MockThemeProvider.tsx";
+import {renderWithProviders} from "../../testHelpers/functions/renderWithProviders.tsx";
+import {clearCookies} from "../../testHelpers/functions/clearCookies.tsx";
 
-// Helper function to render component with context providers
-const renderWithProviders = (children: React.ReactElement, theme: 'light' | 'dark' = 'light', blur: boolean = false) => {
-    return render(
-        <MockThemeProvider theme={theme}>
-            <MockBlurProvider blur={blur}>
-                {children}
-            </MockBlurProvider>
-        </MockThemeProvider>
-    );
-};
-
-describe('CookiePopup Component', () => {
-    beforeEach(() => {
-        // Clear cookies
-        document.cookie.split(';').forEach((c) => {
-            document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/");
-        });
-    });
+describe('CookiePopup Component Functionality', () => {
+    beforeEach(clearCookies)
 
     it('should display when cookiesAccepted cookie does not exist', () => {
         renderWithProviders(<CookiePopup />);
@@ -35,18 +18,112 @@ describe('CookiePopup Component', () => {
         expect(screen.queryByText('This website uses cookies')).not.toBeInTheDocument();
     });
 
-    it('should set cookie and hide when accept is clicked', () => {
-        renderWithProviders(<CookiePopup />);
-        fireEvent.click(screen.getByText('Accept'));
-        expect(document.cookie).toContain('cookiesAccepted=true');
-        expect(screen.queryByText('This website uses cookies')).not.toBeInTheDocument();
-    });
-
     it('should hide when decline is clicked', () => {
         renderWithProviders(<CookiePopup />);
         fireEvent.click(screen.getByText('Decline'));
         expect(document.cookie).not.toContain('cookiesAccepted');
         // expect cookie popup to have hide class
         expect(screen.getByTestId('cookiePopup')).toHaveClass('hide');
+    });
+
+    it('should set cookie and hide when accept is clicked', () => {
+        renderWithProviders(<CookiePopup />);
+        fireEvent.click(screen.getByText('Accept'));
+        expect(document.cookie).toContain('cookiesAccepted=true');
+        expect(screen.queryByText('This website uses cookies')).not.toBeInTheDocument();
+    });
+});
+
+describe('CookiePopup Component Styling', () => {
+    beforeEach(clearCookies)
+    it('should start with light mode and not have blur', () => {
+        renderWithProviders(<CookiePopup />, 'light');
+        expect(screen.getByTestId('cookiePopup')).not.toHaveClass('dark');
+        expect(screen.getByTestId('cookiePopup')).not.toHaveClass('blur');
+    });
+
+    it('should apply dark theme class when theme is dark', () => {
+        renderWithProviders(<CookiePopup />, 'dark');
+        expect(screen.getByTestId('cookiePopup')).toHaveClass('dark');
+    });
+
+    it('should apply blur class when blur is true', () => {
+        renderWithProviders(<CookiePopup />, 'light', true);
+        expect(screen.getByTestId('cookiePopup')).toHaveClass('blur');
+    });
+
+    it('should not apply blur class when blur is false', () => {
+        renderWithProviders(<CookiePopup />, 'light', false);
+        expect(screen.getByTestId('cookiePopup')).not.toHaveClass('blur');
+    });
+});
+
+describe('CookiePopup Development Artefacts', () => {
+    beforeEach(clearCookies);
+    it('should not send anything in the console when theme is light', () => {
+        const consoleLogSpy = vi.spyOn(console, 'log');
+
+        renderWithProviders(<CookiePopup />, 'light');
+
+        expect(consoleLogSpy).not.toHaveBeenCalled();
+    });
+
+    it('should not send a message in the console when theme is dark', () => {
+        const consoleLogSpy = vi.spyOn(console, 'log');
+
+        renderWithProviders(<CookiePopup />, 'dark');
+
+        expect(consoleLogSpy).not.toHaveBeenCalled();
+    });
+
+    it('should not send anything in the console when blur is false', () => {
+        const consoleLogSpy = vi.spyOn(console, 'log');
+
+        renderWithProviders(<CookiePopup />, 'light', false);
+
+        expect(consoleLogSpy).not.toHaveBeenCalled();
+    });
+
+    it('should not send a message in the console when blur is true', () => {
+        const consoleLogSpy = vi.spyOn(console, 'log');
+
+        renderWithProviders(<CookiePopup />, 'light', true);
+
+        expect(consoleLogSpy).not.toHaveBeenCalled();
+    });
+
+    it('should not send anything in the console when cookiesAccepted cookie exists', () => {
+        document.cookie = 'cookiesAccepted=true';
+        const consoleLogSpy = vi.spyOn(console, 'log');
+
+        renderWithProviders(<CookiePopup />);
+
+        expect(consoleLogSpy).not.toHaveBeenCalled();
+    });
+
+    it('should not send a message in the console when cookiesAccepted cookie does not exist', () => {
+        const consoleLogSpy = vi.spyOn(console, 'log');
+
+        renderWithProviders(<CookiePopup />);
+
+        expect(consoleLogSpy).not.toHaveBeenCalled();
+    });
+
+    it('should not send a message in the console when decline is clicked', () => {
+        const consoleLogSpy = vi.spyOn(console, 'log');
+
+        renderWithProviders(<CookiePopup />);
+        fireEvent.click(screen.getByText('Decline'));
+
+        expect(consoleLogSpy).not.toHaveBeenCalled();
+    });
+
+    it('should not send anything in the console when accept is clicked', () => {
+        const consoleLogSpy = vi.spyOn(console, 'log');
+
+        renderWithProviders(<CookiePopup />);
+        fireEvent.click(screen.getByText('Accept'));
+
+        expect(consoleLogSpy).not.toHaveBeenCalled();
     });
 });

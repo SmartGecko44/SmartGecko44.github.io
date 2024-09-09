@@ -1,19 +1,9 @@
-import { render, screen, act } from '@testing-library/react';
+import { screen, act } from '@testing-library/react';
 import { describe, it, expect, vi } from 'vitest';
 import PageTime from './PageTime';
-import { MockBlurProvider } from '../../testHelpers/mocks/MockBlurProvider';
-import React from "react";
+import {renderWithProviders} from "../../testHelpers/functions/renderWithProviders.tsx";
 
-// Helper function to render component with context providers
-const renderWithProviders = (children: React.ReactElement, blur: boolean = false) => {
-    return render(
-        <MockBlurProvider blur={blur}>
-            {children}
-        </MockBlurProvider>
-    );
-};
-
-describe('PageTime Component', () => {
+describe('PageTime Component Functionality', () => {
     beforeEach(() => {
         vi.useFakeTimers();
     });
@@ -44,3 +34,13 @@ describe('PageTime Component', () => {
         expect(screen.getByText('Why are you still here?')).toBeInTheDocument();
     });
 });
+
+describe('PageTime Development Artefacts', () => {
+    it('should not send anything in the console', () => {
+        const consoleLogSpy = vi.spyOn(console, 'log');
+
+        renderWithProviders(<PageTime />);
+
+        expect(consoleLogSpy).not.toHaveBeenCalled();
+    });
+})

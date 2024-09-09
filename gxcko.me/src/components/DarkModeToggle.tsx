@@ -24,7 +24,6 @@ const DarkModeToggle: React.FC = () => {
 
     // Function to show the dialog box
     function showDialog() {
-        console.log('Showing dialog');
         const dialog = dialogRef.current;
 
         if (dialog) {
@@ -41,8 +40,6 @@ const DarkModeToggle: React.FC = () => {
             toggleBlur();
             if (checkCookiesAccepted()) {
                 setCookie('dialogShown', true, 30);
-            } else {
-                console.log('Cookies are not enabled');
             }
 
             // Set timeouts for button visibility
@@ -61,7 +58,6 @@ const DarkModeToggle: React.FC = () => {
     }
 
     function closeDialog() {
-        console.log('Closing dialog');
         const dialog = dialogRef.current;
 
         if (dialog) {
@@ -114,13 +110,12 @@ const DarkModeToggle: React.FC = () => {
 
     function handleKeyDown(event: React.KeyboardEvent) {
         if (event.key === 'Enter') {
-            console.log('3');
             showDialog();
         }
     }
 
     return (
-        <div id="darkModeMenu">
+        <div data-testid="darkModeMenuFull" id="darkModeMenu">
             <noscript>
                 <style>
                     {`
@@ -131,18 +126,18 @@ const DarkModeToggle: React.FC = () => {
                 </style>
             </noscript>
             <Background dialogOpen={dialogOpen.current}/>
-            <dialog ref={dialogRef} id="darkModeDia" className={theme === 'dark' ? 'dark' : ''}>
+            <dialog ref={dialogRef} data-testid="darkDialog" id="darkModeDia" className={theme === 'dark' ? 'dark' : ''}>
                 <p>Would you like to toggle the dark mode?</p>
                 <div className="button-container">
-                    {!showCancelBtn && <div className={"button-placeholder"}/>}
+                    {!showCancelBtn && <div data-testid="cancelButtonPlaceholder" className={"button-placeholder"}/>}
                     {showCancelBtn &&
-                        <button id="cancel" onClick={closeDialog} tabIndex={0} className="button-appear">No</button>}
+                        <button data-testid="cancelButton" id="cancel" onClick={closeDialog} tabIndex={0} className="button-appear">No</button>}
                     {!showConfirmBtn && <div className={"button-placeholder"}/>}
-                    {showConfirmBtn && <button id="confirm" onClick={handleConfirm} tabIndex={0}
+                    {showConfirmBtn && <button data-testid="confirmButton" id="confirm" onClick={handleConfirm} tabIndex={0}
                                                className="button-appear">Yes</button>}
                 </div>
             </dialog>
-            <img id="dark-toggle" src="../../icons/contrast.svg" alt="Dark Mode Icon"
+            <img data-testid="darkToggleImage" id="dark-toggle" src="../../icons/contrast.svg" alt="Dark Mode Icon"
                  className={`${theme === 'dark' ? 'dark' : ''} ${blur ? 'blur' : ''}`} onClick={showDialog}
                  tabIndex={dialogOpen.current ? -1 : 0}
                  role={"button"} onKeyDown={handleKeyDown}/>

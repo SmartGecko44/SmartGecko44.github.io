@@ -10,13 +10,13 @@ export default function App() {
     return (
         <ThemeProvider>
             <BlurProvider>
-                <div>
+                <>
                     <DarkModeToggle/>
                     <ContentContainer/>
                     <CookiePopup/>
                     <BottomBanner/>
                     <PageTime/>
-                </div>
+                </>
             </BlurProvider>
         </ThemeProvider>
     )

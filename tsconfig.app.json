@@ -27,8 +27,8 @@
     "types": ["vitest/globals", "@testing-library/jest-dom", "vitest", "node"]
   },
   "include": [
-    "gxcko.me/src",
-    "gxcko.me/testHelpers",
+    "gxcko.me/src/",
+    "gxcko.me/testHelpers/",
     "node_modules/vitest/globals.d.ts",
     "node_modules/@testing-library/jest-dom/index.d.ts" // Ensure TypeScript picks up the definitions
   ]

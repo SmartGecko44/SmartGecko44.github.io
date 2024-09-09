@@ -1,17 +1,22 @@
-// MockThemeProvider.tsx
-import React, { ReactNode } from 'react';
+import React, { ReactNode, useState } from 'react';
 import { ThemeContext } from '../../src/contexts/ThemeContext'; // Adjust the import path
 
 interface MockThemeProviderProps {
     children: ReactNode;
-    theme: 'light' | 'dark';
+    theme: 'light' | 'dark'; // Rename to theme
 }
 
 export const MockThemeProvider: React.FC<MockThemeProviderProps> = ({ children, theme }) => {
-    const toggleTheme = () => {}; // No-op for toggleTheme since we are only mocking
+    // State to manage the adjusted theme (adjTheme)
+    const [adjTheme, setAdjTheme] = useState<'light' | 'dark'>(theme);
+
+    // Toggle between 'light' and 'dark'
+    const toggleTheme = () => {
+        setAdjTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
+    };
 
     return (
-        <ThemeContext.Provider value={{ theme, toggleTheme }}>
+        <ThemeContext.Provider value={{ theme: adjTheme, toggleTheme }}>
             {children}
         </ThemeContext.Provider>
     );
