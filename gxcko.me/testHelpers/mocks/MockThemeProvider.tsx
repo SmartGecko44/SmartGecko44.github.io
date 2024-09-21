@@ -8,7 +8,7 @@ interface MockThemeProviderProps {
 
 export const MockThemeProvider: React.FC<MockThemeProviderProps> = ({ children, theme }) => {
     // State to manage the adjusted theme (adjTheme)
-    const [adjTheme, setAdjTheme] = useState<'light' | 'dark'>(theme);
+    let [adjTheme, setAdjTheme] = useState<'light' | 'dark'>(theme);
 
     // Toggle between 'light' and 'dark'
     const toggleTheme = () => {
