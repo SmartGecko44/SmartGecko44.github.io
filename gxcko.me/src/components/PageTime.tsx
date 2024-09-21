@@ -43,7 +43,7 @@ export default function PageTime() {
     return (
         <div id="pageTime" className={blur ? 'blur' : ""}>
             {width >= 800 && (
-                <span>Time wasted on this page: </span>
+                <span data-testid="OptText">Time wasted on this page: </span>
             )}
             <span>{secondsToString(seconds)}</span>
             {seconds >= 3600 && (

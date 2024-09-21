@@ -1,3 +1,5 @@
+// noinspection JSConstantReassignment
+
 import { screen, act } from '@testing-library/react';
 import { describe, it, expect, vi } from 'vitest';
 import PageTime from './PageTime';
@@ -32,6 +34,28 @@ describe('PageTime Component Functionality', () => {
             vi.advanceTimersByTime(3600 * 1000); // Advance by 1 hour (3600 seconds)
         });
         expect(screen.getByText('Why are you still here?')).toBeInTheDocument();
+    });
+});
+
+describe('PageTime Component Styling', () => {
+    it('should not overlap with BottomBanner', () => {
+        window.innerWidth = 799;
+
+        window.dispatchEvent(new Event('resize'));
+
+        renderWithProviders(<PageTime />);
+
+        expect(screen.queryByTestId("OptText")).not.toBeInTheDocument();
+    });
+
+    it('should overlap with BottomBanner', () => {
+        window.innerWidth = 800;
+
+        window.dispatchEvent(new Event('resize'));
+
+        renderWithProviders(<PageTime />);
+
+        expect(screen.getByTestId("OptText")).toBeInTheDocument;
     });
 });
 
