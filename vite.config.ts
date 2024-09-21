@@ -19,6 +19,8 @@ export default defineConfig({
     setupFiles: './vitest.setup.ts',  // Optional: add any setup you need before testHelpers
     coverage: {
       reporter: ['lcov'],  // Generate test coverage reports in different formats
+      exclude: ['scripts/**', 'src/App.tsx', 'src/main.tsx', 'src/vite-env.d.ts'],  // Exclude test files from coverage reports
+
     },
   },
 })

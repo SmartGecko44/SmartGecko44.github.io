@@ -5,6 +5,19 @@ export default function PageTime() {
     const [seconds, setSeconds] = useState(0);
     const { blur } = useBlur();
 
+    const [width, setWidth] = useState(window.innerWidth);
+
+    const ScreenWidth = () => {
+        useEffect(() => {
+            const handleResize = () => setWidth(window.innerWidth);
+
+            window.addEventListener('resize', handleResize);
+            return () => window.removeEventListener('resize', handleResize);
+        }, []);
+    };
+
+    ScreenWidth();
+
     useEffect(() => {
         const interval = setInterval(() => {
             setSeconds((prevSeconds) => prevSeconds + 1);
@@ -29,7 +42,9 @@ export default function PageTime() {
 
     return (
         <div id="pageTime" className={blur ? 'blur' : ""}>
-            <span>Time wasted on this page: </span>
+            {width >= 800 && (
+                <span data-testid="OptText">Time wasted on this page: </span>
+            )}
             <span>{secondsToString(seconds)}</span>
             {seconds >= 3600 && (
                 <>
