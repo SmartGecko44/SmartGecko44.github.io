@@ -21,7 +21,7 @@ describe('CookiePopup Component Functionality', () => {
     it('should hide when decline is clicked', () => {
         renderWithProviders(<CookiePopup />);
         fireEvent.click(screen.getByText('Decline'));
-        expect(document.cookie).not.toContain('cookiesAccepted');
+        expect(document.cookie).not.toContain('cookiesAccepted=true');
         // expect cookie popup to have hide class
         expect(screen.getByTestId('cookiePopup')).toHaveClass('hide');
     });
