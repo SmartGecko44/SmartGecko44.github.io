@@ -1,10 +1,14 @@
+import { sentryVitePlugin } from "@sentry/vite-plugin";
 import { defineConfig } from 'vitest/config'  // Import from 'vitest/config' instead of 'vite'
 import react from '@vitejs/plugin-react'
 import { resolve } from 'path'
 
 // Extend Vite config to include Vitest settings
 export default defineConfig({
-  plugins: [react()],
+  plugins: [react(), sentryVitePlugin({
+    org: "gecko-rz",
+    project: "gh-pages"
+  })],
   root: resolve(__dirname, 'gxcko.me'),
   build: {
     rollupOptions: {
@@ -12,6 +16,8 @@ export default defineConfig({
         main: resolve(__dirname, 'gxcko.me/index.html'),
       },
     },
+
+    sourcemap: true
   },
   test: {
     globals: true,  // Enable global variables like `describe` and `it` without imports
