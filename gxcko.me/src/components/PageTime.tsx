@@ -32,9 +32,25 @@ export default function PageTime() {
         const secondsString = seconds % 60;
 
         if (hours || minutes || secondsString) {
-            return `${hours ? (hours < 10 ? "0" + hours + "h:" : hours + "h:") : ""}${
-                minutes ? (minutes < 10 ? "0" + minutes + "m:" : minutes + "m:") : ""
-            }${secondsString < 10 ? "0" + secondsString + "s" : secondsString + "s"}`;
+            if (hours < 10) {
+                if (minutes < 10) {
+                    return `${hours ? "0" + hours + "h:" : ""}${
+                        minutes ? "0" + minutes + "m:" : ""
+                    }${secondsString < 10 ? "0" + secondsString + "s" : secondsString + "s"}`;
+                } else {
+                    return `${hours ? "0" + hours + "h:" : ""}${
+                        minutes ? minutes + "m:" : ""
+                    }${secondsString < 10 ? "0" + secondsString + "s" : secondsString + "s"}`;
+                }
+            } else if (minutes < 10) {
+                return `${hours ? hours + "h:" : ""}${
+                    minutes ? "0" + minutes + "m:" : ""
+                }${secondsString < 10 ? "0" + secondsString + "s" : secondsString + "s"}`;
+            } else {
+                return `${hours ? hours + "h:" : ""}${
+                    minutes ? minutes + "m:" : ""
+                }${secondsString < 10 ? "0" + secondsString + "s" : secondsString + "s"}`;
+            }
         } else {
             return "none";
         }
