@@ -1,6 +1,7 @@
 import {useEffect, useState} from "react";
 import {useTheme} from "../contexts/ThemeContext.tsx";
 import {useBlur} from "../contexts/BlurContext.tsx";
+import * as Sentry from "@sentry/browser";
 
 // Function to set a cookie
 export function setCookie(name: string, value: boolean, days: number) {
@@ -15,8 +16,19 @@ export function setCookie(name: string, value: boolean, days: number) {
 
 // Function to get a cookie
 export function getCookie(name: string): string | null {
+    let ca = [];
     const nameEQ = name + "=";
-    const ca = document.cookie.split(';');
+    try {
+        ca = document.cookie.split(';');
+    } catch (error) {
+        Sentry.captureException(error , {
+            level: 'error',
+            tags: {
+                handled: true
+            }
+        })
+        return null;
+    }
     for (const element of ca) {
         let c = element.trim();
         if (c.startsWith(nameEQ)) {
