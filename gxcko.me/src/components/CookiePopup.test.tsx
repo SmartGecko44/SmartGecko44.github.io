@@ -1,8 +1,14 @@
 import {describe, expect} from "vitest";
 import {fireEvent, screen} from "@testing-library/react";
-import CookiePopup from "./CookiePopup.tsx";
+import CookiePopup, {getCookie} from "./CookiePopup.tsx";
 import {renderWithProviders} from "../../testHelpers/functions/renderWithProviders.tsx";
 import {clearCookies} from "../../testHelpers/functions/clearCookies.tsx";
+import * as Sentry from "@sentry/browser";
+
+// Mock the entire Sentry module
+vi.mock('@sentry/browser', () => ({
+    captureException: vi.fn(),
+}));
 
 describe('CookiePopup Component Functionality', () => {
     beforeEach(clearCookies)
@@ -125,5 +131,31 @@ describe('CookiePopup Development Artefacts', () => {
         fireEvent.click(screen.getByText('Accept'));
 
         expect(consoleLogSpy).not.toHaveBeenCalled();
+    });
+});
+
+describe('CookiePopup Error Handling', () => {
+    beforeEach(() => {
+        // Mock document.cookie to throw a SecurityError
+        Object.defineProperty(document, 'cookie', {
+            get: () => { throw new DOMException('Failed to read the \'cookie\' property from \'Document\': Cookies are disabled inside \'data:\' URLs.', 'SecurityError'); }
+        });
+    });
+
+    afterEach(() => {
+        // Restore document.cookie and any other mocks after each test
+        vi.restoreAllMocks();
+    });
+
+    it('should throw a Sentry exception when cookie storage cannot be accessed', () => {
+        const result = getCookie('cookiesAccepted');
+
+        // Assert that Sentry.captureException was called with the right error and options
+        expect(Sentry.captureException).toHaveBeenCalledWith(expect.any(DOMException), {
+            level: 'error',
+            tags: { handled: true }
+        });
+
+        expect(result).toBeNull();
     });
 });
