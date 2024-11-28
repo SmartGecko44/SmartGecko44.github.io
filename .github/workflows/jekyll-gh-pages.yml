@@ -49,6 +49,10 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
+        #FIXME: Temporary workaround for issue with icons not displaying :(
+      - name: Move icons to dist
+        run: mv gxcko.me/icons gxcko.me/dist/assets/icons
+
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
         with:

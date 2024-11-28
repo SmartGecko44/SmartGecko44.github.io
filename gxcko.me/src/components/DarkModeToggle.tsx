@@ -3,6 +3,7 @@ import {useTheme} from "../contexts/ThemeContext.tsx";
 import {checkCookiesAccepted, getCookie, setCookie} from "./CookiePopup.tsx";
 import {useBlur} from "../contexts/BlurContext.tsx";
 import Background from "./Background.tsx";
+import contrastIcon from './assets/icons/contrast.svg';
 
 const DarkModeToggle: React.FC = () => {
     const {theme, toggleTheme} = useTheme();
@@ -137,7 +138,7 @@ const DarkModeToggle: React.FC = () => {
                                                className="button-appear">Yes</button>}
                 </div>
             </dialog>
-            <img data-testid="darkToggleImage" id="dark-toggle" src="../../icons/contrast.svg" alt="Dark Mode Icon"
+            <img data-testid="darkToggleImage" id="dark-toggle" src={contrastIcon} alt="Dark Mode Icon"
                  className={`${theme === 'dark' ? 'dark' : ''} ${blur ? 'blur' : ''}`} onClick={showDialog}
                  tabIndex={dialogOpen.current ? -1 : 0}
                  role={"button"} onKeyDown={handleKeyDown}/>
