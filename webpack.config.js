@@ -7,6 +7,7 @@ export default {
 
     output: {
         filename: 'bundle.js', // the output filename
+        // eslint-disable-next-line no-undef
         path: path.resolve(process.cwd(), 'gxcko.me', 'dist'), // the output directory
     },
 
@@ -14,6 +15,7 @@ export default {
     devtool: 'source-map',
 
     plugins: [sentryWebpackPlugin({
+        // eslint-disable-next-line no-undef
         authToken: process.env.SENTRY_AUTH_WEBPACK,
         org: 'gecko-rz',
         project: 'gh-pages'
