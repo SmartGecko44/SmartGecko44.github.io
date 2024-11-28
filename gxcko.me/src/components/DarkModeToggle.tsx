@@ -137,7 +137,7 @@ const DarkModeToggle: React.FC = () => {
                                                className="button-appear">Yes</button>}
                 </div>
             </dialog>
-            <img data-testid="darkToggleImage" id="dark-toggle" src="./assets/icons/contrast.svg" alt="Dark Mode Icon"
+            <img data-testid="darkToggleImage" id="dark-toggle" src="/assets/icons/contrast.svg" alt="Dark Mode Icon"
                  className={`${theme === 'dark' ? 'dark' : ''} ${blur ? 'blur' : ''}`} onClick={showDialog}
                  tabIndex={dialogOpen.current ? -1 : 0}
                  role={"button"} onKeyDown={handleKeyDown}/>
