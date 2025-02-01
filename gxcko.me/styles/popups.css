@@ -272,3 +272,60 @@
     opacity: 0.2;
     border-radius: 50px;
 }
+
+#my-projects-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 80%;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.popup-content.dark {
+    background: #3a3a3a;
+}
+
+.project-list {
+    display: flex;
+    gap: 20px;
+}
+
+.project-item {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.project-image {
+    max-width: 200px;
+    border-radius: 8px;
+}
+
+.project-title {
+    margin-top: 10px;
+    font-size: 16px;
+    color: black
+}
+
+.project-title.dark {
+    color: white;
+}
+
+.popup-overlay {
+    pointer-events: all;
+}

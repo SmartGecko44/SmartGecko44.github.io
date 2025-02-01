@@ -5,14 +5,24 @@ import BottomBanner from "./components/BottomBanner.tsx";
 import {BlurProvider} from "./contexts/BlurContext.tsx";
 import ContentContainer from "./components/ContentContainer.tsx";
 import PageTime from "./components/PageTime.tsx";
+import {useState} from "react";
+import MyProjects from "./components/MyProjects.tsx";
 
 export default function App() {
+    const [showProjects, setShowProjects] = useState(false);
+
+    const toggleProjects = () => {
+        setShowProjects(!showProjects);
+        console.log(showProjects);
+    }
+
     return (
         <ThemeProvider>
             <BlurProvider>
+                {showProjects && <MyProjects toggleProjects={toggleProjects}/>}
                 <>
                     <DarkModeToggle/>
-                    <ContentContainer/>
+                    <ContentContainer toggleProjects={toggleProjects}/>
                     <CookiePopup/>
                     <BottomBanner/>
                     <PageTime/>

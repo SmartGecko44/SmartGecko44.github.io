@@ -1,7 +1,11 @@
 import {useTheme} from "../contexts/ThemeContext.tsx";
 import {useBlur} from "../contexts/BlurContext.tsx";
 
-export default function ContentContainer() {
+interface ContentContainerProps {
+    toggleProjects: () => void;
+}
+
+export default function ContentContainer({ toggleProjects }: Readonly<ContentContainerProps>) {
     const {theme} = useTheme()
     const {blur} = useBlur()
 
@@ -39,6 +43,11 @@ export default function ContentContainer() {
                    className={`bubble ${theme === 'dark' ? 'dark' : ''}`} target="_blank"
                    rel="noopener noreferrer" tabIndex={0}>View
                     the repo for this website</a>
+                <br/>
+                <div className="half-br"></div>
+                <br/>
+                <br/>
+                <button onClick={toggleProjects}>View my projects</button>
             </div>
         </div>
     )
